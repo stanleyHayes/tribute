@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Tribute",
+  "name": "Turning Hearts is a platform where you can share with the world the stories and memories of your ancestors as well as your own stories and memories.\n\nOur Turning Hearts Medallion gives access to anyone who scans it the ability to learn and interact with those who have gone on.",
   "icons": [
     {
       "src": "favicon.ico",
