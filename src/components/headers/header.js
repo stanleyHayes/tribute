@@ -16,7 +16,7 @@ const Header = () => {
     });
 
     return (
-        <AppBar sx={{backgroundColor: appBarColor, backdropFilter: 'blur(3px)'}} elevation={0}>
+        <AppBar sx={{backgroundColor: appBarColor, backdropFilter: 'blur(8px)'}} elevation={0}>
             <Box sx={{display: {xs: 'none', lg: 'block'}}}>
                 <DesktopHeader/>
             </Box>
