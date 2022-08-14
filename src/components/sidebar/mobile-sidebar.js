@@ -170,7 +170,7 @@ const MobileSidebar = () => {
                                 active={pathname.includes('marijuana')}
                                 label="Overview"
                                 path="/medallion/overview"
-                                icon={pathname.includes('medallion') ?
+                                icon={pathname === '/medallion/overview' ?
                                     (<Home sx={{
                                             cursor: 'pointer',
                                             color: 'secondary.main',
@@ -198,7 +198,7 @@ const MobileSidebar = () => {
                                 active={pathname.includes('medallion')}
                                 label="Features"
                                 path="/medallion/features"
-                                icon={pathname.includes('medallion') ?
+                                icon={pathname === '/medallion/features' ?
                                     (<Home sx={{
                                         cursor: 'pointer',
                                         color: 'secondary.main',
