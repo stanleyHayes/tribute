@@ -21,7 +21,8 @@ const lightTheme = createTheme({
         background: {
             paper: '#ffffff',
             default: '#e8eaed',
-            light: 'rgba(232,234,237,0.3)'
+            light: 'rgba(232,234,237,0.3)',
+            appBar: 'rgba(91,91,91,0.85)'
         },
         light: {
             secondary: 'rgba(26,115,232,0.3)',
@@ -66,7 +67,8 @@ const darkTheme = createTheme({
         background: {
             paper: '#303136',
             default: '#202124',
-            light: 'rgba(32,33,36,0.3)'
+            light: 'rgba(32,33,36,0.3)',
+            appBar: 'rgba(32,33,36,0.85)'
         },
         light: {
             secondary: 'rgba(26,115,232,0.3)',

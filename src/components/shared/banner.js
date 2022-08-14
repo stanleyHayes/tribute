@@ -9,7 +9,7 @@ const Banner = ({backgroundImage, children, alt, links}) => {
             sx={{
                 position: 'relative',
                 width: '100%',
-                height: {xs: '92vh', md: '92vh', lg: '92vh'},
+                height: {xs: '100vh', md: '100vh', lg: '100vh'},
                 backgroundColor: 'rgba(255, 255, 255, .35)',
             }}
             pt={4}

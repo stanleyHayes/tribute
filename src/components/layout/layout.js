@@ -24,6 +24,7 @@ const Layout = ({children}) => {
             </Box>
 
             <SwipeableDrawer
+                sx={{backgroundColor: 'background.default'}}
                 onClose={() => dispatch(closeDrawer())}
                 onOpen={() => dispatch(openDrawer())}
                 open={drawerOpen}>

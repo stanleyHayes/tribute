@@ -12,7 +12,7 @@ const MobileSidebar = () => {
     const dispatch = useDispatch();
 
     return (
-        <Box sx={{minHeight: '100vh', minWidth: "80vw", py: 3}}>
+        <Box sx={{minHeight: '100vh', minWidth: "80vw", py: 3, backgroundColor: 'background.default'}}>
             <Stack
                 sx={{px: 4, mb: 4}}
                 direction="row"
@@ -101,7 +101,7 @@ const MobileSidebar = () => {
 
 
                 <Accordion
-                    sx={{width: '100%'}}
+                    sx={{width: '100%', backgroundColor: 'background.default', padding: 0}}
                     variant="elevation"
                     elevation={0}>
                     <AccordionSummary>
@@ -121,26 +121,26 @@ const MobileSidebar = () => {
                                 startIcon={
                                     pathname.includes('medallion') && pathname.includes('medallion') ?
                                         (<Home sx={{
-                                                    cursor: 'pointer',
-                                                    color: 'secondary.main',
-                                                    borderBottomRightRadius: 4,
-                                                    borderTopRightRadius: 8,
-                                                    borderBottomLeftRadius: 8,
-                                                    borderTopLeftRadius: 4,
-                                                    padding: 0.4,
-                                                    fontSize: 36,
-                                                    backgroundColor: 'light.secondary'
-                                                }}/>) :
+                                            cursor: 'pointer',
+                                            color: 'secondary.main',
+                                            borderBottomRightRadius: 4,
+                                            borderTopRightRadius: 8,
+                                            borderBottomLeftRadius: 8,
+                                            borderTopLeftRadius: 4,
+                                            padding: 0.4,
+                                            fontSize: 36,
+                                            backgroundColor: 'light.secondary'
+                                        }}/>) :
                                         (<HomeOutlined sx={{
-                                                    cursor: 'pointer',
-                                                    color: 'text.secondary',
-                                                    borderBottomRightRadius: 4,
-                                                    borderTopRightRadius: 8,
-                                                    borderBottomLeftRadius: 8,
-                                                    borderTopLeftRadius: 4,
-                                                    padding: 0.4,
-                                                    fontSize: 36
-                                                }}/>)
+                                            cursor: 'pointer',
+                                            color: 'text.secondary',
+                                            borderBottomRightRadius: 4,
+                                            borderTopRightRadius: 8,
+                                            borderBottomLeftRadius: 8,
+                                            borderTopLeftRadius: 4,
+                                            padding: 0.4,
+                                            fontSize: 36
+                                        }}/>)
                                 }
                                 size="large"
                                 variant="text"
@@ -172,34 +172,6 @@ const MobileSidebar = () => {
                                 path="/medallion/overview"
                                 icon={pathname.includes('medallion') ?
                                     (<Home sx={{
-                                                cursor: 'pointer',
-                                                color: 'secondary.main',
-                                                borderBottomRightRadius: 4,
-                                                borderTopRightRadius: 8,
-                                                borderBottomLeftRadius: 8,
-                                                borderTopLeftRadius: 4,
-                                                padding: 0.4,
-                                                fontSize: 36,
-                                                backgroundColor: 'light.secondary'
-                                            }}/>
-                                    ) : (<HomeOutlined sx={{
-                                                cursor: 'pointer',
-                                                color: 'text.secondary',
-                                                borderBottomRightRadius: 4,
-                                                borderTopRightRadius: 8,
-                                                borderBottomLeftRadius: 8,
-                                                borderTopLeftRadius: 4,
-                                                padding: 0.4,
-                                                fontSize: 36
-                                            }}/>)
-                            }
-                            />
-                            <SidebarLink
-                                active={pathname.includes('medallion')}
-                                label="Features"
-                                path="/medallion/features"
-                                icon={pathname.includes('medallion') ?
-                                    (<Home sx={{
                                             cursor: 'pointer',
                                             color: 'secondary.main',
                                             borderBottomRightRadius: 4,
@@ -209,17 +181,45 @@ const MobileSidebar = () => {
                                             padding: 0.4,
                                             fontSize: 36,
                                             backgroundColor: 'light.secondary'
-                                        }}/>) :
+                                        }}/>
+                                    ) : (<HomeOutlined sx={{
+                                        cursor: 'pointer',
+                                        color: 'text.secondary',
+                                        borderBottomRightRadius: 4,
+                                        borderTopRightRadius: 8,
+                                        borderBottomLeftRadius: 8,
+                                        borderTopLeftRadius: 4,
+                                        padding: 0.4,
+                                        fontSize: 36
+                                    }}/>)
+                                }
+                            />
+                            <SidebarLink
+                                active={pathname.includes('medallion')}
+                                label="Features"
+                                path="/medallion/features"
+                                icon={pathname.includes('medallion') ?
+                                    (<Home sx={{
+                                        cursor: 'pointer',
+                                        color: 'secondary.main',
+                                        borderBottomRightRadius: 4,
+                                        borderTopRightRadius: 8,
+                                        borderBottomLeftRadius: 8,
+                                        borderTopLeftRadius: 4,
+                                        padding: 0.4,
+                                        fontSize: 36,
+                                        backgroundColor: 'light.secondary'
+                                    }}/>) :
                                     (<HomeOutlined sx={{
-                                    cursor: 'pointer',
-                                    color: 'text.secondary',
-                                    borderBottomRightRadius: 4,
-                                    borderTopRightRadius: 8,
-                                    borderBottomLeftRadius: 8,
-                                    borderTopLeftRadius: 4,
-                                    padding: 0.4,
-                                    fontSize: 36
-                                }}/>)}
+                                        cursor: 'pointer',
+                                        color: 'text.secondary',
+                                        borderBottomRightRadius: 4,
+                                        borderTopRightRadius: 8,
+                                        borderBottomLeftRadius: 8,
+                                        borderTopLeftRadius: 4,
+                                        padding: 0.4,
+                                        fontSize: 36
+                                    }}/>)}
                             />
                         </Stack>
                     </AccordionDetails>

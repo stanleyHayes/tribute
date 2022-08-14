@@ -436,7 +436,6 @@ const ContactPage = () => {
                                                 color="secondary"
                                                 disableElevation={true}
                                                 variant="contained"
-                                                disable={messageLoading}
                                                 sx={{
                                                     textTransform: 'capitalize',
                                                     borderBottomRightRadius: 4,

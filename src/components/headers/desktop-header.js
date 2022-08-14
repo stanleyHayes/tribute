@@ -52,7 +52,7 @@ const DesktopHeader = () => {
                                 borderBottomLeftRadius: 8,
                                 borderTopLeftRadius: 4,
                                 color: pathname.includes('medallion') ? 'text.active' : 'text.inactive',
-                                backgroundColor: pathname.includes('medallion') ? 'light.secondary' : false,
+                                backgroundColor: pathname.includes('medallion') ? 'light.active' : false,
                                 textTransform: 'capitalize',
                             }}>
                             Medallions
