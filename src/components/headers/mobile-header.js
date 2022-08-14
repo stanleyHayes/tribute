@@ -31,8 +31,8 @@ const MobileHeader = () => {
                                 borderWidth: 2,
                                 backgroundColor: 'light.active',
                                 borderBottomRightRadius: 4,
-                                borderTopRightRadius: 16,
-                                borderBottomLeftRadius: 16,
+                                borderTopRightRadius: 12,
+                                borderBottomLeftRadius: 12,
                                 borderTopLeftRadius: 4,
                                 textTransform: 'capitalize',
                                 color: 'text.active',
@@ -49,8 +49,8 @@ const MobileHeader = () => {
                             disableElevation={true}
                             sx={{
                                 borderBottomRightRadius: 4,
-                                borderTopRightRadius: 16,
-                                borderBottomLeftRadius: 16,
+                                borderTopRightRadius: 12,
+                                borderBottomLeftRadius: 12,
                                 borderTopLeftRadius: 4,
                                 textTransform: 'capitalize'
                             }}>
