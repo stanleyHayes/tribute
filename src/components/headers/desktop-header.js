@@ -94,8 +94,8 @@ const DesktopHeader = () => {
                                     borderWidth: 2,
                                     backgroundColor: 'light.active',
                                     borderBottomRightRadius: 4,
-                                    borderTopRightRadius: 8,
-                                    borderBottomLeftRadius: 8,
+                                    borderTopRightRadius: 12,
+                                    borderBottomLeftRadius: 12,
                                     borderTopLeftRadius: 4,
                                     textTransform: 'capitalize',
                                     borderColor: 'text.active',
@@ -112,8 +112,8 @@ const DesktopHeader = () => {
                                 disableElevation={true}
                                 sx={{
                                     borderBottomRightRadius: 4,
-                                    borderTopRightRadius: 8,
-                                    borderBottomLeftRadius: 8,
+                                    borderTopRightRadius: 12,
+                                    borderBottomLeftRadius: 12,
                                     borderTopLeftRadius: 4,
                                     textTransform: 'capitalize',
                                 }}>
@@ -126,8 +126,8 @@ const DesktopHeader = () => {
                                 sx={{
                                     backgroundColor: 'light.active',
                                     borderBottomRightRadius: 4,
-                                    borderTopRightRadius: 8,
-                                    borderBottomLeftRadius: 8,
+                                    borderTopRightRadius: 12,
+                                    borderBottomLeftRadius: 12,
                                     borderTopLeftRadius: 4,
                                     padding: 0.4,
                                     fontSize: 32,
@@ -140,8 +140,8 @@ const DesktopHeader = () => {
                                 sx={{
                                     backgroundColor: 'light.active',
                                     borderBottomRightRadius: 4,
-                                    borderTopRightRadius: 8,
-                                    borderBottomLeftRadius: 8,
+                                    borderTopRightRadius: 12,
+                                    borderBottomLeftRadius: 12,
                                     borderTopLeftRadius: 4,
                                     padding: 0.4,
                                     fontSize: 32,

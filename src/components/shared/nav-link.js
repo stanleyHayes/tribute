@@ -17,8 +17,8 @@ const NavLink = ({path, label, active}) => {
                 variant="text"
                 sx={{
                     borderBottomRightRadius: 4,
-                    borderTopRightRadius: 16,
-                    borderBottomLeftRadius: 16,
+                    borderTopRightRadius: 12,
+                    borderBottomLeftRadius: 12,
                     borderTopLeftRadius: 4,
                     color: active ? 'text.active' : 'text.inactive',
                     backgroundColor: active ? 'light.active' : false,
