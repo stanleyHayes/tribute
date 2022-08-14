@@ -97,7 +97,7 @@ const HomePage = () => {
                 <Box sx={{py: 8, backgroundColor: 'background.paper'}}>
                     <Container>
                         <Grid container={true} spacing={2} justifyContent="space-between">
-                            <Grid item={true} xs={12} md={4}>
+                            <Grid item={true} xs={12} md={5}>
                                 <Box sx={{mb: 4}}>
                                     <CardMedia
                                         component="img"
@@ -296,7 +296,7 @@ const HomePage = () => {
                 <Box sx={{py: 8, backgroundColor: 'background.default'}}>
                     <Container>
                         <Grid spacing={4} container={true} justifyContent="space-between" alignItems="center">
-                            <Grid item={true} xs={12} md={4}>
+                            <Grid item={true} xs={12} md={5}>
                                 <CardMedia
                                     component="img"
                                     src={banner}
@@ -401,7 +401,7 @@ const HomePage = () => {
                 <Box sx={{py: 8, backgroundColor: 'background.default'}}>
                     <Container>
                         <Grid spacing={4} container={true} justifyContent="space-between" alignItems="center">
-                            <Grid item={true} xs={12} md={4}>
+                            <Grid item={true} xs={12} md={5}>
                                 <CardMedia
                                     component="img"
                                     src={banner}
@@ -449,7 +449,7 @@ const HomePage = () => {
                                         </Typography>
                                     </Box>
 
-                                    <Link to={'/privacy-policy'} style={{textDecoration: 'none'}}>
+                                    <Link to={'/about'} style={{textDecoration: 'none'}}>
                                         <Button
                                             variant="contained"
                                             color="secondary"
@@ -463,7 +463,7 @@ const HomePage = () => {
                                                 borderBottomLeftRadius: 12,
                                                 borderTopLeftRadius: 4
                                             }}>
-                                            About Privacy
+                                            About Us
                                         </Button>
                                     </Link>
                                 </Box>
@@ -472,7 +472,7 @@ const HomePage = () => {
                     </Container>
                 </Box>
 
-                <Box sx={{py: 8}}>
+                <Box sx={{py: 8, backgroundColor: 'background.paper'}}>
                     <Container>
                         <Grid spacing={4} container={true} justifyContent="space-between" alignItems="center">
                             <Grid item={true} xs={12} md={6}>
@@ -492,7 +492,7 @@ const HomePage = () => {
                                         audio. Our users can hide updates from lifeline and also hide profile fields if
                                         user wants to restrict the visibility.
                                     </Typography>
-                                    <Typography variant="body2" sx={{color: 'text.secondary', mb: 1}}>
+                                    <Typography variant="body2" sx={{color: 'text.secondary', mb: 4}}>
                                         Literally our users can keep the profile visible only for family members.
                                     </Typography>
                                     <Link to={'/privacy-policy'} style={{textDecoration: 'none'}}>
@@ -514,7 +514,7 @@ const HomePage = () => {
                                     </Link>
                                 </Box>
                             </Grid>
-                            <Grid item={true} xs={12} md={4}>
+                            <Grid item={true} xs={12} md={5}>
                                 <CardMedia
                                     component="img"
                                     src={banner}
