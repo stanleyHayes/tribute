@@ -3,7 +3,7 @@ import {Box, CardMedia, Container, Grid, Stack, Typography} from "@mui/material"
 import Banner from "../../components/shared/banner";
 import banner from "../../assets/images/banners/about.jpg";
 import {TRIBUTE_DATA} from "../../utils/data";
-import Leader from "../../components/sidebar/leader";
+import Leader from "../../components/shared/leader";
 
 const AboutPage = () => {
     return (

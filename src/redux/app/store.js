@@ -1,6 +1,7 @@
 import {configureStore} from "@reduxjs/toolkit";
 import uiReducer from "../features/ui/ui-slice";
 import messageReducer from "../features/message/message-slice";
+import storyReducer from "../features/story/story-slice";
 
 import {CONSTANTS} from "../../utils/constants";
 
@@ -11,7 +12,8 @@ const themeVariant = localStorage.getItem(CONSTANTS.TRIBUTE_THEME_VARIANT_KEY) ?
 const store = configureStore({
     reducer: {
         ui: uiReducer,
-        message: messageReducer
+        message: messageReducer,
+        story: storyReducer
     },
     preloadedState: {
         ui: {themeVariant, activePath: '/', drawerOpen: false},
