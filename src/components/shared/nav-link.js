@@ -20,8 +20,8 @@ const NavLink = ({path, label, active}) => {
                     borderTopRightRadius: 16,
                     borderBottomLeftRadius: 16,
                     borderTopLeftRadius: 4,
-                    color: active ? 'secondary.main' : 'text.secondary',
-                    backgroundColor: active ? 'light.secondary' : false,
+                    color: active ? 'text.active' : 'text.inactive',
+                    backgroundColor: active ? 'light.active' : false,
                     textTransform: 'capitalize',
                 }}>
                 {label}

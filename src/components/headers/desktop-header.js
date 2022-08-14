@@ -48,10 +48,10 @@ const DesktopHeader = () => {
                             endIcon={menuOpen ? <KeyboardArrowDown/> : <KeyboardArrowUp/>}
                             sx={{
                                 borderBottomRightRadius: 4,
-                                borderTopRightRadius: 16,
-                                borderBottomLeftRadius: 16,
+                                borderTopRightRadius: 8,
+                                borderBottomLeftRadius: 8,
                                 borderTopLeftRadius: 4,
-                                color: pathname.includes('medallion') ? 'secondary.main' : 'text.secondary',
+                                color: pathname.includes('medallion') ? 'text.active' : 'text.inactive',
                                 backgroundColor: pathname.includes('medallion') ? 'light.secondary' : false,
                                 textTransform: 'capitalize',
                             }}>
@@ -92,12 +92,14 @@ const DesktopHeader = () => {
                                 color="secondary"
                                 sx={{
                                     borderWidth: 2,
-                                    backgroundColor: 'light.secondary',
+                                    backgroundColor: 'light.active',
                                     borderBottomRightRadius: 4,
-                                    borderTopRightRadius: 16,
-                                    borderBottomLeftRadius: 16,
+                                    borderTopRightRadius: 8,
+                                    borderBottomLeftRadius: 8,
                                     borderTopLeftRadius: 4,
-                                    textTransform: 'capitalize'
+                                    textTransform: 'capitalize',
+                                    borderColor: 'text.active',
+                                    color: 'text.active'
                                 }}>
                                 Login
                             </Button>
@@ -110,8 +112,8 @@ const DesktopHeader = () => {
                                 disableElevation={true}
                                 sx={{
                                     borderBottomRightRadius: 4,
-                                    borderTopRightRadius: 16,
-                                    borderBottomLeftRadius: 16,
+                                    borderTopRightRadius: 8,
+                                    borderBottomLeftRadius: 8,
                                     borderTopLeftRadius: 4,
                                     textTransform: 'capitalize',
                                 }}>
@@ -122,28 +124,29 @@ const DesktopHeader = () => {
                             <LightMode
                                 color="secondary"
                                 sx={{
-                                    backgroundColor: 'light.secondary',
-                                    borderBottomRightRadius: 4,
-                                    borderTopRightRadius: 8,
-                                    borderBottomLeftRadius: 8,
-                                    borderTopLeftRadius: 4,
-                                    padding: 0.4,
-                                    fontSize: 32
-                                }}
-                                onClick={() => dispatch(toggleTheme())}
-                            />
-                        ) : (
-                            <DarkMode
-                                color="secondary"
-                                sx={{
-                                    backgroundColor: 'light.secondary',
+                                    backgroundColor: 'light.active',
                                     borderBottomRightRadius: 4,
                                     borderTopRightRadius: 8,
                                     borderBottomLeftRadius: 8,
                                     borderTopLeftRadius: 4,
                                     padding: 0.4,
                                     fontSize: 32,
-                                    cursor: 'pointer'
+                                    color: 'white'
+                                }}
+                                onClick={() => dispatch(toggleTheme())}
+                            />
+                        ) : (
+                            <DarkMode
+                                sx={{
+                                    backgroundColor: 'light.active',
+                                    borderBottomRightRadius: 4,
+                                    borderTopRightRadius: 8,
+                                    borderBottomLeftRadius: 8,
+                                    borderTopLeftRadius: 4,
+                                    padding: 0.4,
+                                    fontSize: 32,
+                                    cursor: 'pointer',
+                                    color: 'white'
                                 }}
                                 onClick={() => dispatch(toggleTheme())}
                             />

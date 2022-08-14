@@ -27,15 +27,16 @@ const MobileHeader = () => {
                         <Button
                             size="small"
                             variant="outlined"
-                            color="secondary"
                             sx={{
                                 borderWidth: 2,
-                                backgroundColor: 'light.secondary',
+                                backgroundColor: 'light.active',
                                 borderBottomRightRadius: 4,
                                 borderTopRightRadius: 16,
                                 borderBottomLeftRadius: 16,
                                 borderTopLeftRadius: 4,
-                                textTransform: 'capitalize'
+                                textTransform: 'capitalize',
+                                color: 'text.active',
+                                borderColor: 'text.active'
                             }}>
                             Login
                         </Button>
@@ -57,46 +58,46 @@ const MobileHeader = () => {
                         </Button>
                     </Link>
                     <Menu
-                        color="secondary"
                         sx={{
-                            backgroundColor: 'light.secondary',
+                            backgroundColor: 'light.active',
                             borderBottomRightRadius: 4,
                             borderTopRightRadius: 8,
                             borderBottomLeftRadius: 8,
                             borderTopLeftRadius: 4,
                             padding: 0.4,
                             fontSize: 32,
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            color: 'white',
                         }}
                         onClick={() => dispatch(openDrawer())}
                     />
 
                     {themeVariant === 'dark' ? (
                         <LightMode
-                            color="secondary"
                             sx={{
-                                backgroundColor: 'light.secondary',
+                                backgroundColor: 'light.active',
                                 borderBottomRightRadius: 4,
                                 borderTopRightRadius: 8,
                                 borderBottomLeftRadius: 8,
                                 borderTopLeftRadius: 4,
                                 padding: 0.4,
                                 fontSize: 32,
-                                cursor: 'pointer'
+                                cursor: 'pointer',
+                                color: 'white'
                             }}
                             onClick={() => dispatch(toggleTheme())}
                         />
                     ) : (
                         <DarkMode
-                            color="secondary"
                             sx={{
-                                backgroundColor: 'light.secondary',
+                                backgroundColor: 'light.active',
                                 borderBottomRightRadius: 4,
                                 borderTopRightRadius: 8,
                                 borderBottomLeftRadius: 8,
                                 borderTopLeftRadius: 4,
                                 padding: 0.4,
-                                fontSize: 32
+                                fontSize: 32,
+                                color: 'white'
                             }}
                             onClick={() => dispatch(toggleTheme())}
                         />

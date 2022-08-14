@@ -2,7 +2,7 @@ import {createTheme} from "@mui/material";
 
 const lightTheme = createTheme({
     typography: {
-        fontFamily: 'GoogleSans, EuclidCircularB, TTSquares'
+        fontFamily: 'TTSquares, EuclidCircularB, GoogleSans, EuclidCircularB, TTSquares'
     },
     palette: {
         primary: {
@@ -13,7 +13,9 @@ const lightTheme = createTheme({
         },
         text: {
             primary: '#202124',
-            secondary: '#5f6368'
+            secondary: '#5f6368',
+            active: '#f8f9fa',
+            inactive: '#d2d3d7'
         },
         mode: 'light',
         background: {
@@ -26,7 +28,9 @@ const lightTheme = createTheme({
             red: 'rgba(217,48,37,0.3)',
             yellow: 'rgba(249,171,0,0.3)',
             green: 'rgba(52,168,83,0.3)',
-            blue: 'rgba(26,115,232,0.3)'
+            blue: 'rgba(26,115,232,0.3)',
+            white: 'rgba(255, 255, 255, 0.3)',
+            active: 'rgba(255, 255, 255, 0.3)'
         },
         colors: {
             yellow: '#f9ab00',
@@ -42,7 +46,7 @@ const lightTheme = createTheme({
 
 const darkTheme = createTheme({
     typography: {
-        fontFamily: 'GoogleSans, EuclidCircularB, TTSquares'
+        fontFamily: 'TTSquares, EuclidCircularB, GoogleSans, EuclidCircularB, TTSquares'
     },
     palette: {
         primary: {
@@ -53,7 +57,9 @@ const darkTheme = createTheme({
         },
         text: {
             primary: '#f8f9fa',
-            secondary: '#d2d3d7'
+            secondary: '#d2d3d7',
+            active: '#f8f9fa',
+            inactive: '#d2d3d7'
         },
         mode: 'dark',
         background: {
@@ -66,13 +72,16 @@ const darkTheme = createTheme({
             red: 'rgba(217,48,37,0.3)',
             yellow: 'rgba(249,171,0,0.3)',
             green: 'rgba(52,168,83,0.3)',
-            blue: 'rgba(26,115,232,0.3)'
+            blue: 'rgba(26,115,232,0.3)',
+            white: 'rgba(255, 255, 255, 0.3)',
+            active: 'rgba(255, 255, 255, 0.3)'
         },
         colors: {
             yellow: '#f9ab00',
             red: '#d93025',
             blue: '#1a73e8',
-            green: '#34a853'
+            green: '#34a853',
+            white: '#ffffff'
         }
     },
     shape: {

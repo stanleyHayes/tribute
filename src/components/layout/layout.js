@@ -12,7 +12,7 @@ const Layout = ({children}) => {
     return (
         <Box>
             <Box sx={{minHeight: '100vh', backgroundColor: 'background.default'}}>
-                <Box sx={{mb: 6}}>
+                <Box>
                     <Header/>
                 </Box>
                 <Box sx={{flexGrow: 1}}>

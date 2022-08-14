@@ -1,4 +1,4 @@
-import {Accordion, AccordionDetails, AccordionSummary, Avatar, Box, Button, Stack} from "@mui/material";
+import {Accordion, AccordionDetails, AccordionSummary, Box, Button, Stack} from "@mui/material";
 import SidebarLink from "../shared/sidebar-link";
 import {useLocation} from "react-router-dom";
 import {ChevronRight, Close, DarkMode, Home, HomeOutlined, LightMode} from "@mui/icons-material";

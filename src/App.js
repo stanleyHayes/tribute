@@ -13,6 +13,7 @@ import MedallionFeaturesPage from "./pages/medalions/medallion-features-page";
 import MedallionPage from "./pages/medalions/medallions-page";
 import StoriesPage from "./pages/stories/stories-page";
 import NotFoundPage from "./pages/404/not-found-page";
+import BuyMedallionsPage from "./pages/medalions/buy-medallions-page";
 
 function App() {
     const {themeVariant} = useSelector(selectUI);
@@ -29,6 +30,7 @@ function App() {
                 <Route element={<StoriesPage/>} path="/stories"/>
                 <Route element={<MedallionFeaturesPage/>} path="/medallion/features"/>
                 <Route element={<MedallionPage/>} path="/medallion/overview"/>
+                <Route element={<BuyMedallionsPage/>} path="/medallions"/>
                 <Route element={<NotFoundPage/>} path="*"/>
             </Routes>
         </ThemeProvider>
