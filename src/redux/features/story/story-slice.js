@@ -24,7 +24,8 @@ const storySlice = createSlice({
     initialState: {
         storyLoading: false,
         storyMessage: null,
-        storyError: null
+        storyError: null,
+        stories: []
     },
     reducers: {},
     extraReducers: builder => {
