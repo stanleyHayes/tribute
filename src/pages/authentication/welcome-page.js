@@ -1,7 +1,7 @@
 import {Box, Button, Container, Grid, Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 import BannerSliderItem from "../../components/shared/banner-slider-item";
-import {THE_BOOK_STORE_DATA} from "../../utils/data";
+import {TRIBUTE_DATA} from "../../utils/data";
 import Carousel from "react-material-ui-carousel";
 
 const WelcomePage = () => {
@@ -94,7 +94,7 @@ const WelcomePage = () => {
                         duration={3000}
                         indicators={false}
                         cycleNavigation={true}>
-                        {THE_BOOK_STORE_DATA.FEATURES.map((item, index) => {
+                        {TRIBUTE_DATA.FEATURES.map((item, index) => {
                             return (
                                 <Box key={index}>
                                     <BannerSliderItem item={item}/>

@@ -2,6 +2,7 @@ import {configureStore} from "@reduxjs/toolkit";
 import uiReducer from "../features/ui/ui-slice";
 import messageReducer from "../features/message/message-slice";
 import storyReducer from "../features/story/story-slice";
+import authReducer from "../features/auth/auth-slice";
 
 import {CONSTANTS} from "../../utils/constants";
 
@@ -13,7 +14,8 @@ const store = configureStore({
     reducer: {
         ui: uiReducer,
         message: messageReducer,
-        story: storyReducer
+        story: storyReducer,
+        auth: authReducer
     },
     preloadedState: {
         ui: {themeVariant, activePath: '/', drawerOpen: false},

@@ -21,7 +21,7 @@ import {AUTH_ACTION_CREATORS, selectAuth} from "../../redux/features/auth/auth-s
 import {useNavigate, useParams} from "react-router";
 import loginLogo from "../../assets/images/verify-otp.png";
 import {Link} from "react-router-dom";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo/logo.png";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
 import {LoadingButton} from "@mui/lab";
 import {useSnackbar} from "notistack";

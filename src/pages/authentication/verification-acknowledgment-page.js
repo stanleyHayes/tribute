@@ -3,7 +3,7 @@ import loginLogo from "./../../assets/images/account-success.png";
 import "yup-phone";
 import {Link} from "react-router-dom";
 import Carousel from "react-material-ui-carousel";
-import {THE_BOOK_STORE_DATA} from "../../utils/data";
+import {TRIBUTE_DATA} from "../../utils/data";
 import BannerSliderItem from "../../components/shared/banner-slider-item";
 
 const VerificationAcknowledgmentPage = () => {
@@ -87,7 +87,7 @@ const VerificationAcknowledgmentPage = () => {
                         duration={3000}
                         indicators={false}
                         cycleNavigation={true}>
-                        {THE_BOOK_STORE_DATA.FEATURES.map((item, index) => {
+                        {TRIBUTE_DATA.FEATURES.map((item, index) => {
                             return (
                                 <Box key={index}>
                                     <BannerSliderItem item={item}/>

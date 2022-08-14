@@ -14,6 +14,14 @@ import MedallionPage from "./pages/medalions/medallions-page";
 import StoriesPage from "./pages/stories/stories-page";
 import NotFoundPage from "./pages/404/not-found-page";
 import BuyMedallionsPage from "./pages/medalions/buy-medallions-page";
+import VerificationAcknowledgmentPage from "./pages/authentication/verification-acknowledgment-page";
+import RegisterPage from "./pages/authentication/register-page";
+import LoginPage from "./pages/authentication/login-page";
+import ResetPasswordPage from "./pages/authentication/reset-password-page";
+import ForgotPasswordPage from "./pages/authentication/forgot-password-page";
+import VerifyAccountPage from "./pages/authentication/verify-account-page";
+import VerifyLoginOtpPage from "./pages/authentication/verify-login-otp-page";
+import WelcomePage from "./pages/authentication/welcome-page";
 
 function App() {
     const {themeVariant} = useSelector(selectUI);
@@ -31,6 +39,14 @@ function App() {
                 <Route element={<MedallionFeaturesPage/>} path="/medallion/features"/>
                 <Route element={<MedallionPage/>} path="/medallion/overview"/>
                 <Route element={<BuyMedallionsPage/>} path="/medallions"/>
+                <Route element={<VerifyAccountPage/>} exact={true} path="/auth/verify/:token"/>
+                <Route element={<VerificationAcknowledgmentPage/>} exact={true} path="/account/verify/success"/>
+                <Route element={<RegisterPage/>} exact={true} path="/auth/register"/>
+                <Route element={<VerifyLoginOtpPage/>} exact={true} path="/auth/otp/:token/verify"/>
+                <Route element={<LoginPage/>} exact={true} path="/auth/login"/>
+                <Route element={<WelcomePage/>} exact={true} path="/welcome"/>
+                <Route element={<ResetPasswordPage/>} exact={true} path="/auth/reset-password"/>
+                <Route element={<ForgotPasswordPage/>} exact={true} path="/auth/forgot-password"/>
                 <Route element={<NotFoundPage/>} path="*"/>
             </Routes>
         </ThemeProvider>
