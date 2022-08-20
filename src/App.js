@@ -22,6 +22,15 @@ import ForgotPasswordPage from "./pages/authentication/forgot-password-page";
 import VerifyAccountPage from "./pages/authentication/verify-account-page";
 import VerifyLoginOtpPage from "./pages/authentication/verify-login-otp-page";
 import WelcomePage from "./pages/authentication/welcome-page";
+import StoriesAuthPage from "./pages/stories/stories-auth-page";
+import ProfilePage from "./pages/profile/profile-page";
+import UpdateProfilePage from "./pages/account/update-profile-page";
+import SettingsPage from "./pages/account/settings-page";
+import ChangePasswordPage from "./pages/account/change-password-page";
+import DashboardPage from "./pages/dashboard/dashboard-page";
+import ProductsPage from "./pages/medalions/products-page";
+import WishlistPage from "./pages/cart/wishlist-page";
+import CartPage from "./pages/cart/cart-page";
 
 function App() {
     const {themeVariant} = useSelector(selectUI);
@@ -35,10 +44,19 @@ function App() {
                 <Route element={<ContactPage/>} path="/contact"/>
                 <Route element={<FeaturesPage/>} path="/features"/>
                 <Route element={<HelpPage/>} path="/help-center"/>
-                <Route element={<StoriesPage/>} path="/stories"/>
+                <Route element={<StoriesPage/>} path="/our-stories"/>
+                <Route element={<StoriesAuthPage/>} path="/stories"/>
+                <Route element={<ProfilePage/>} path="/profile"/>
+                <Route element={<WishlistPage/>} path="/wishlist"/>
+                <Route element={<CartPage/>} path="/cart"/>
+                <Route element={<UpdateProfilePage/>} path="/update-profile"/>
+                <Route element={<SettingsPage/>} path="/settings"/>
+                <Route element={<DashboardPage/>} path="/dashboard"/>
+                <Route element={<ChangePasswordPage/>} path="/change-password"/>
                 <Route element={<MedallionFeaturesPage/>} path="/medallion/features"/>
                 <Route element={<MedallionPage/>} path="/medallion/overview"/>
                 <Route element={<BuyMedallionsPage/>} path="/medallions"/>
+                <Route element={<ProductsPage/>} path="/products"/>
                 <Route element={<VerifyAccountPage/>} exact={true} path="/auth/verify/:token"/>
                 <Route element={<VerificationAcknowledgmentPage/>} exact={true} path="/account/verify/success"/>
                 <Route element={<RegisterPage/>} exact={true} path="/auth/register"/>

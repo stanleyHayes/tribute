@@ -10,8 +10,7 @@ const initialState = {
     authData: null
 };
 
-const login = createAsyncThunk(
-    'auth/login',
+const login = createAsyncThunk('auth/login',
     async (
         {values, navigate, resetForm, showMessage, setSubmitting},
         {rejectWithValue}) => {
@@ -32,8 +31,7 @@ const login = createAsyncThunk(
     });
 
 
-const verifyAccount = createAsyncThunk(
-    'auth/verifyAccount',
+const verifyAccount = createAsyncThunk('auth/verifyAccount',
     async (
         {values, resetForm, setSubmitting, navigate, showMessage, token},
         {rejectWithValue}) => {
@@ -74,8 +72,8 @@ const updateProfile = createAsyncThunk('auth/updateProfile',
             const response = await authAPI.updateProfile(token, {...rest});
             resetForm();
             setSubmitting(false);
-            localStorage.setItem(CONSTANTS.THEBOOKSTORE_AUTH_TOKEN, JSON.stringify(response.data.token));
-            localStorage.setItem(CONSTANTS.THEBOOKSTORE_AUTH_DATA, JSON.stringify(response.data.data));
+            localStorage.setItem(CONSTANTS.TRIBUTE_AUTH_TOKEN, JSON.stringify(response.data.token));
+            localStorage.setItem(CONSTANTS.TRIBUTE_AUTH_DATA, JSON.stringify(response.data.data));
             return {data: response.data.data, token: response.data.token};
         } catch (e) {
             const {message} = e.response.data;
@@ -87,8 +85,8 @@ const verifyOTP = createAsyncThunk('auth/verifyOTP',
     async ({values, token, navigate, resetForm, showMessage}, {rejectWithValue}) => {
         try {
             const response = await authAPI.verifyOTP(values, token);
-            localStorage.setItem(CONSTANTS.THEBOOKSTORE_AUTH_TOKEN, JSON.stringify(response.data.token));
-            localStorage.setItem(CONSTANTS.THEBOOKSTORE_AUTH_DATA, JSON.stringify(response.data.data));
+            localStorage.setItem(CONSTANTS.TRIBUTE_AUTH_TOKEN, JSON.stringify(response.data.token));
+            localStorage.setItem(CONSTANTS.TRIBUTE_AUTH_DATA, JSON.stringify(response.data.data));
             navigate(`/`);
             resetForm();
             showMessage(response.data.message, {variant: 'success'});
@@ -112,8 +110,8 @@ const resendOTP = createAsyncThunk('auth/resendOTP',
             navigate(`/auth/otp/${response.data.token}/verify`);
             resetForm();
             showMessage(response.data.message, {variant: 'success'});
-            localStorage.setItem(CONSTANTS.THEBOOKSTORE_AUTH_TOKEN, JSON.stringify(response.data.token));
-            localStorage.setItem(CONSTANTS.THEBOOKSTORE_AUTH_DATA, JSON.stringify(response.data.data));
+            localStorage.setItem(CONSTANTS.TRIBUTE_AUTH_TOKEN, JSON.stringify(response.data.token));
+            localStorage.setItem(CONSTANTS.TRIBUTE_AUTH_DATA, JSON.stringify(response.data.data));
             return {data: response.data.data, token: response.data.token};
         } catch (e) {
             const {message} = e.response.data;

@@ -1,14 +1,14 @@
 import AuthLayout from "../../components/layout/auth-layout";
 import {Container, Typography} from "@mui/material";
 
-const ChangePasswordPage = () => {
+const ProfilePage = () => {
     return (
         <AuthLayout>
             <Container>
-                <Typography variant="h4" align="center">ChangePassword Page</Typography>
+                <Typography variant="h4" align="center">Profile Page</Typography>
             </Container>
         </AuthLayout>
     )
 }
 
-export default ChangePasswordPage;
+export default ProfilePage;

@@ -124,12 +124,13 @@ const RegisterPage = () => {
                     minHeight: '100vh',
                     justifyContent: 'center',
                     overflowY: 'scroll',
+                    paddingY: 4,
                 }}>
                 {authLoading && <LinearProgress variant="query" color="secondary"/>}
                 <Container maxWidth="md">
                     <Box sx={{alignItems: "center", display: 'flex'}} flexGrow={1}>
                         <form
-                            style={{width: '100%', marginTop: 8, marginBottom: 8}}
+                            style={{width: '100%'}}
                             autoComplete="off"
                             onSubmit={formik.handleSubmit}>
                             <Box>
@@ -214,7 +215,7 @@ const RegisterPage = () => {
                                                                     cursor: 'pointer',
                                                                     color: 'secondary.main',
                                                                     padding: 1,
-                                                                    fontSize: 24,
+                                                                    fontSize: 36,
                                                                 }}
                                                             />
                                                         </InputAdornment>
@@ -258,7 +259,7 @@ const RegisterPage = () => {
                                                                     cursor: 'pointer',
                                                                     color: 'secondary.main',
                                                                     padding: 1,
-                                                                    fontSize: 24,
+                                                                    fontSize: 36,
                                                                 }}
                                                             />
                                                         </InputAdornment>
@@ -305,7 +306,7 @@ const RegisterPage = () => {
                                                                     cursor: 'pointer',
                                                                     color: 'secondary.main',
                                                                     padding: 1,
-                                                                    fontSize: 24,
+                                                                    fontSize: 36,
                                                                 }}
                                                             />
                                                         </InputAdornment>
@@ -349,7 +350,7 @@ const RegisterPage = () => {
                                                                     cursor: 'pointer',
                                                                     color: 'secondary.main',
                                                                     padding: 1,
-                                                                    fontSize: 24,
+                                                                    fontSize: 36,
                                                                 }}
                                                             />
                                                         </InputAdornment>
@@ -396,7 +397,7 @@ const RegisterPage = () => {
                                                                     cursor: 'pointer',
                                                                     color: 'secondary.main',
                                                                     padding: 1,
-                                                                    fontSize: 24,
+                                                                    fontSize: 36,
                                                                 }}
                                                             />
                                                         </InputAdornment>
@@ -457,7 +458,7 @@ const RegisterPage = () => {
                                     </Grid>
                                 </Grid>
 
-                                <Grid mb={2} container={true} spacing={2} alignItems="center">
+                                <Grid mb={6} container={true} spacing={2} alignItems="center">
                                     <Grid item={true} xs={12} md={6}>
                                         <Box>
                                             <Typography
@@ -485,7 +486,7 @@ const RegisterPage = () => {
                                                                         cursor: 'pointer',
                                                                         color: 'secondary.main',
                                                                         padding: 1,
-                                                                        fontSize: 24,
+                                                                        fontSize: 36,
                                                                     }}
                                                                 /> :
                                                                 <VisibilityOutlined
@@ -494,7 +495,7 @@ const RegisterPage = () => {
                                                                         cursor: 'pointer',
                                                                         color: 'secondary.main',
                                                                         padding: 1,
-                                                                        fontSize: 24,
+                                                                        fontSize: 36,
                                                                     }}
                                                                 />}
                                                         </InputAdornment>
@@ -544,7 +545,7 @@ const RegisterPage = () => {
                                                                         cursor: 'pointer',
                                                                         color: 'secondary.main',
                                                                         padding: 1,
-                                                                        fontSize: 24,
+                                                                        fontSize: 36,
                                                                     }}
                                                                 /> :
                                                                 <VisibilityOutlined
@@ -553,7 +554,7 @@ const RegisterPage = () => {
                                                                         cursor: 'pointer',
                                                                         color: 'secondary.main',
                                                                         padding: 1,
-                                                                        fontSize: 24,
+                                                                        fontSize: 36,
                                                                     }}
                                                                 />}
                                                         </InputAdornment>

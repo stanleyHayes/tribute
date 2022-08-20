@@ -7,7 +7,6 @@ import {
     Container,
     FormControl,
     FormHelperText,
-    Grid,
     InputAdornment,
     InputLabel,
     LinearProgress,
@@ -80,8 +79,8 @@ const LoginPage = () => {
                     <img
                         style={{
                             maxHeight: '100vh',
-                            width: '50%',
-                            height: '50%',
+                            width: '100%',
+                            height: '100%',
                             objectFit: 'cover',
                             objectPosition: 'center'
                         }}
@@ -91,211 +90,207 @@ const LoginPage = () => {
                 </Stack>
             </Box>
             <Box sx={{
-                flex: 1,
                 display: 'flex',
                 alignItems: 'center',
+                flexBasis: '30%',
                 backgroundColor: 'background.paper',
                 maxHeight: '100vh',
                 overflowY: {sx: 'scroll', lg: 'hidden'}
             }}>
-                {authLoading && <LinearProgress variant="query" color="secondary"/>}
-                <Grid container={true} justifyContent="center" alignItems="center">
-                    <Grid item={true} xs={12} md={6}>
-                        <Container>
-                            <Box mb={2}>
-                                <Button
-                                    size="large"
-                                    sx={{textTransform: 'capitalize'}}
-                                    onClick={() => navigate(-1)}
-                                    variant="text"
-                                    color="secondary"
-                                    startIcon={<KeyboardArrowLeft/>}>
-                                    Back
-                                </Button>
-                            </Box>
-                            <Box sx={{}}>
-                                <form autoComplete="off" onSubmit={formik.handleSubmit}>
-                                    <Box>
-                                        {authError && (
-                                            <Alert severity="error">
-                                                <AlertTitle>{authError}</AlertTitle>
-                                            </Alert>
-                                        )}
+                <Container>
+                    {authLoading && <LinearProgress variant="query" color="secondary"/>}
+                    <Box mb={2}>
+                        <Button
+                            size="large"
+                            sx={{textTransform: 'capitalize'}}
+                            onClick={() => navigate(-1)}
+                            variant="text"
+                            color="secondary"
+                            startIcon={<KeyboardArrowLeft/>}>
+                            Back
+                        </Button>
+                    </Box>
+                    <Box sx={{}}>
+                        <form autoComplete="off" onSubmit={formik.handleSubmit}>
+                            <Box>
+                                {authError && (
+                                    <Alert severity="error">
+                                        <AlertTitle>{authError}</AlertTitle>
+                                    </Alert>
+                                )}
 
-                                        {authMessage && (
-                                            <Alert severity="error">
-                                                <AlertTitle>{authMessage}</AlertTitle>
-                                            </Alert>
-                                        )}
+                                {authMessage && (
+                                    <Alert severity="error">
+                                        <AlertTitle>{authMessage}</AlertTitle>
+                                    </Alert>
+                                )}
 
-                                        <Typography mb={2} variant="h5" sx={{color: 'text.primary'}}>
-                                            Welcome
-                                        </Typography>
+                                <Typography mb={2} variant="h5" sx={{color: 'text.primary'}}>
+                                    Welcome
+                                </Typography>
 
-                                        <Typography mb={2} variant="h5" sx={{color: 'secondary.main'}}>
-                                            Tribute
-                                        </Typography>
+                                <Typography mb={2} variant="h5" sx={{color: 'secondary.main'}}>
+                                    Tribute
+                                </Typography>
 
-                                        <Stack mb={4} direction="row" spacing={2} alignItems="center">
-                                            <Typography
-                                                variant="body2"
-                                                sx={{color: 'text.secondary', fontWeight: 500}}>
-                                                Don't have an account?
-                                            </Typography>
-                                            <Typography
-                                                variant="body2"
-                                                sx={{color: 'text.secondary', fontWeight: 500}}>
-                                                <Link
-                                                    style={{
-                                                        color: theme.palette.secondary.main,
-                                                        textDecoration: 'none'
-                                                    }}
-                                                    to="/auth/register">
-                                                    Sign Up
-                                                </Link>
-                                            </Typography>
-                                        </Stack>
-
-                                        <Box mb={4}>
-                                            <Typography mb={1} variant="body2"
-                                                        sx={{color: 'secondary.main', fontWeight: 'bold'}}>
-                                                Email
-                                            </Typography>
-                                            <FormControl fullWidth={true} variant="outlined">
-                                                <InputLabel
-                                                    htmlFor="usernameOrEmailOrPhone">Email</InputLabel>
-                                                <OutlinedInput
-                                                    fullWidth={true}
-                                                    value={formik.values.usernameOrEmailOrPhone}
-                                                    id="usernameOrEmailOrPhone"
-                                                    name="usernameOrEmailOrPhone"
-                                                    type="text"
-                                                    endAdornment={
-                                                        <InputAdornment
-                                                            position="end">
-                                                            <MailOutline
-                                                                sx={{
-                                                                    cursor: 'pointer',
-                                                                    color: 'secondary.main',
-                                                                    padding: 1,
-                                                                    fontSize: 24,
-                                                                }}
-                                                            />
-                                                        </InputAdornment>
-                                                    }
-                                                    error={formik.touched.usernameOrEmailOrPhone && formik.errors.usernameOrEmailOrPhone}
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    placeholder="Enter username or email or phone"
-                                                    required={true}
-                                                    label="Email"
-                                                    size="medium"
-                                                    margin="dense"
-                                                />
-                                                {formik.touched.usernameOrEmailOrPhone && formik.errors.usernameOrEmailOrPhone && (
-                                                    <FormHelperText
-                                                        error={true}>
-                                                        {formik.errors.usernameOrEmailOrPhone}
-                                                    </FormHelperText>
-                                                )}
-                                            </FormControl>
-                                        </Box>
-
-                                        <Box mb={4}>
-                                            <Typography mb={1} variant="body2"
-                                                        sx={{color: 'secondary.main', fontWeight: 'bold'}}>
-                                                Password
-                                            </Typography>
-                                            <FormControl fullWidth={true} variant="outlined">
-                                                <InputLabel htmlFor="password">Password</InputLabel>
-                                                <OutlinedInput
-                                                    fullWidth={true}
-                                                    id="password"
-                                                    value={formik.values.password}
-                                                    name="password"
-                                                    type={showPassword ? 'text' : 'password'}
-                                                    endAdornment={
-                                                        <InputAdornment
-                                                            position="end">
-                                                            {showPassword ?
-                                                                <VisibilityOff
-                                                                    onClick={() => setShowPassword(false)}
-                                                                    sx={{
-                                                                        cursor: 'pointer',
-                                                                        color: 'secondary.main',
-                                                                        padding: 1,
-                                                                        fontSize: 24,
-                                                                    }}
-                                                                /> :
-                                                                <Visibility
-                                                                    onClick={() => setShowPassword(true)}
-                                                                    sx={{
-                                                                        cursor: 'pointer',
-                                                                        color: 'secondary.main',
-                                                                        padding: 1,
-                                                                        fontSize: 24,
-                                                                    }}
-                                                                />}
-                                                        </InputAdornment>
-                                                    }
-                                                    error={formik.touched.password && formik.errors.password}
-                                                    onChange={formik.handleChange}
-                                                    onBlur={formik.handleBlur}
-                                                    placeholder="Enter password"
-                                                    required={true}
-                                                    label="Password"
-                                                    size="medium"
-                                                    margin="dense"
-                                                />
-                                                {formik.touched.password && formik.errors.password && (
-                                                    <FormHelperText
-                                                        error={true}>
-                                                        {formik.errors.password}
-                                                    </FormHelperText>
-                                                )}
-                                            </FormControl>
-                                        </Box>
-
-                                        <Typography mb={4} variant="body2" sx={{color: 'text.secondary'}}>
-                                            <Link
-                                                style={{
-                                                    color: theme.palette.secondary.main,
-                                                    textDecoration: 'none'
-                                                }}
-                                                to="/auth/forgot-password">
-                                                I forgot my password
-                                            </Link>
-                                        </Typography>
-
-                                        <LoadingButton
-                                            type="submit"
-                                            size="large"
-                                            color="secondary"
-                                            sx={{
-                                                textTransform: 'capitalize',
-                                                py: 1.2,
-                                                borderTopRightRadius: 32,
-                                                borderBottomRightRadius: 0,
-                                                borderBottomLeftRadius: 32,
-                                                borderTopLeftRadius: 32,
+                                <Stack mb={4} direction="row" spacing={2} alignItems="center">
+                                    <Typography
+                                        variant="body2"
+                                        sx={{color: 'text.secondary', fontWeight: 500}}>
+                                        Don't have an account?
+                                    </Typography>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{color: 'text.secondary', fontWeight: 500}}>
+                                        <Link
+                                            style={{
+                                                color: theme.palette.secondary.main,
+                                                textDecoration: 'none'
                                             }}
+                                            to="/auth/register">
+                                            Sign Up
+                                        </Link>
+                                    </Typography>
+                                </Stack>
+
+                                <Box mb={4}>
+                                    <Typography mb={1} variant="body2"
+                                                sx={{color: 'secondary.main', fontWeight: 'bold'}}>
+                                        Email
+                                    </Typography>
+                                    <FormControl fullWidth={true} variant="outlined">
+                                        <InputLabel
+                                            htmlFor="usernameOrEmailOrPhone">Email</InputLabel>
+                                        <OutlinedInput
                                             fullWidth={true}
-                                            loadingPosition="start"
-                                            startIcon={authLoading ?
-                                                <CircularProgress color="secondary"/> : null}
-                                            loadingIndicator={authLoading ?
-                                                <CircularProgress color="secondary"/> : null}
-                                            loading={authLoading}
-                                            variant="contained"
-                                            disableElevation={true}>
-                                            {authLoading ? 'Signing In...' : 'Sign In'}
-                                        </LoadingButton>
-                                    </Box>
-                                </form>
+                                            value={formik.values.usernameOrEmailOrPhone}
+                                            id="usernameOrEmailOrPhone"
+                                            name="usernameOrEmailOrPhone"
+                                            type="text"
+                                            endAdornment={
+                                                <InputAdornment
+                                                    position="end">
+                                                    <MailOutline
+                                                        sx={{
+                                                            cursor: 'pointer',
+                                                            color: 'secondary.main',
+                                                            padding: 1,
+                                                            fontSize: 36,
+                                                        }}
+                                                    />
+                                                </InputAdornment>
+                                            }
+                                            error={formik.touched.usernameOrEmailOrPhone && formik.errors.usernameOrEmailOrPhone}
+                                            onChange={formik.handleChange}
+                                            onBlur={formik.handleBlur}
+                                            placeholder="Enter username or email or phone"
+                                            required={true}
+                                            label="Email"
+                                            size="medium"
+                                            margin="dense"
+                                        />
+                                        {formik.touched.usernameOrEmailOrPhone && formik.errors.usernameOrEmailOrPhone && (
+                                            <FormHelperText
+                                                error={true}>
+                                                {formik.errors.usernameOrEmailOrPhone}
+                                            </FormHelperText>
+                                        )}
+                                    </FormControl>
+                                </Box>
+
+                                <Box mb={4}>
+                                    <Typography mb={1} variant="body2"
+                                                sx={{color: 'secondary.main', fontWeight: 'bold'}}>
+                                        Password
+                                    </Typography>
+                                    <FormControl fullWidth={true} variant="outlined">
+                                        <InputLabel htmlFor="password">Password</InputLabel>
+                                        <OutlinedInput
+                                            fullWidth={true}
+                                            id="password"
+                                            value={formik.values.password}
+                                            name="password"
+                                            type={showPassword ? 'text' : 'password'}
+                                            endAdornment={
+                                                <InputAdornment
+                                                    position="end">
+                                                    {showPassword ?
+                                                        <VisibilityOff
+                                                            onClick={() => setShowPassword(false)}
+                                                            sx={{
+                                                                cursor: 'pointer',
+                                                                color: 'secondary.main',
+                                                                padding: 1,
+                                                                fontSize: 36,
+                                                            }}
+                                                        /> :
+                                                        <Visibility
+                                                            onClick={() => setShowPassword(true)}
+                                                            sx={{
+                                                                cursor: 'pointer',
+                                                                color: 'secondary.main',
+                                                                padding: 1,
+                                                                fontSize: 36,
+                                                            }}
+                                                        />}
+                                                </InputAdornment>
+                                            }
+                                            error={formik.touched.password && formik.errors.password}
+                                            onChange={formik.handleChange}
+                                            onBlur={formik.handleBlur}
+                                            placeholder="Enter password"
+                                            required={true}
+                                            label="Password"
+                                            size="medium"
+                                            margin="dense"
+                                        />
+                                        {formik.touched.password && formik.errors.password && (
+                                            <FormHelperText
+                                                error={true}>
+                                                {formik.errors.password}
+                                            </FormHelperText>
+                                        )}
+                                    </FormControl>
+                                </Box>
+
+                                <Typography mb={4} variant="body2" sx={{color: 'text.secondary'}}>
+                                    <Link
+                                        style={{
+                                            color: theme.palette.secondary.main,
+                                            textDecoration: 'none'
+                                        }}
+                                        to="/auth/forgot-password">
+                                        I forgot my password
+                                    </Link>
+                                </Typography>
+
+                                <LoadingButton
+                                    type="submit"
+                                    size="large"
+                                    color="secondary"
+                                    sx={{
+                                        textTransform: 'capitalize',
+                                        py: 1.2,
+                                        borderTopRightRadius: 32,
+                                        borderBottomRightRadius: 0,
+                                        borderBottomLeftRadius: 32,
+                                        borderTopLeftRadius: 32,
+                                    }}
+                                    fullWidth={true}
+                                    loadingPosition="start"
+                                    startIcon={authLoading ?
+                                        <CircularProgress color="secondary"/> : null}
+                                    loadingIndicator={authLoading ?
+                                        <CircularProgress color="secondary"/> : null}
+                                    loading={authLoading}
+                                    variant="contained"
+                                    disableElevation={true}>
+                                    {authLoading ? 'Signing In...' : 'Sign In'}
+                                </LoadingButton>
                             </Box>
-                        </Container>
-                    </Grid>
-                </Grid>
+                        </form>
+                    </Box>
+                </Container>
             </Box>
         </Box>
     )

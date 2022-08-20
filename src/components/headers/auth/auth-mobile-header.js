@@ -1,0 +1,164 @@
+import {Badge, Box, Button, MenuItem, Stack, Toolbar, Menu} from "@mui/material";
+import {useDispatch, useSelector} from "react-redux";
+import {DarkMode, LightMode, LogoutOutlined, Menu as MUIIcon, MoreHoriz, ShoppingBagOutlined} from "@mui/icons-material";
+import {openDrawer, selectUI, toggleTheme} from "../../../redux/features/ui/ui-slice";
+import {Link, useLocation} from "react-router-dom";
+import NavLink from "../../shared/nav-link";
+import {selectAuth} from "../../../redux/features/auth/auth-slice";
+import {useState} from "react";
+
+const AuthMobileHeader = () => {
+
+    const dispatch = useDispatch();
+    const {themeVariant} = useSelector(selectUI);
+    const {pathname} = useLocation();
+
+    const {authData} = useSelector(selectAuth)
+
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleMenuOpen = event => {
+        setAnchorEl(event.currentTarget);
+        setMenuOpen(true);
+    }
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+        setMenuOpen(false);
+    }
+
+    return (
+        <Toolbar variant="regular">
+            <Stack sx={{width: '100%'}} justifyContent="space-between" alignItems="center" direction="row">
+                <Box>
+                    <MUIIcon
+                        sx={{
+                            backgroundColor: 'light.secondary',
+                            borderBottomRightRadius: 4,
+                            borderTopRightRadius: 8,
+                            borderBottomLeftRadius: 8,
+                            borderTopLeftRadius: 4,
+                            padding: 0.4,
+                            fontSize: 32,
+                            cursor: 'pointer',
+                            color: 'secondary.main',
+                        }}
+                        onClick={() => dispatch(openDrawer())}
+                    />
+                </Box>
+                <Stack spacing={1} alignItems="center" direction="row">
+                    <Badge color="secondary" badgeContent={999} variant="dot" max={10}>
+                        <Link to='/cart' style={{textDecoration: 'none'}}>
+                            <ShoppingBagOutlined
+                                color="secondary"
+                                sx={{
+                                    backgroundColor: 'light.secondary',
+                                    borderBottomRightRadius: 4,
+                                    borderTopRightRadius: 12,
+                                    borderBottomLeftRadius: 12,
+                                    borderTopLeftRadius: 4,
+                                    padding: 0.4,
+                                    fontSize: 36,
+                                    color: 'secondary.main',
+                                    cursor: 'pointer'
+                                }}
+                            />
+                        </Link>
+                    </Badge>
+                    {themeVariant === 'dark' ? (
+                        <LightMode
+                            sx={{
+                                backgroundColor: 'light.secondary',
+                                borderBottomRightRadius: 4,
+                                borderTopRightRadius: 8,
+                                borderBottomLeftRadius: 8,
+                                borderTopLeftRadius: 4,
+                                padding: 0.4,
+                                fontSize: 32,
+                                cursor: 'pointer',
+                                color: 'secondary.main'
+                            }}
+                            onClick={() => dispatch(toggleTheme())}
+                        />
+                    ) : (
+                        <DarkMode
+                            sx={{
+                                backgroundColor: 'light.secondary',
+                                borderBottomRightRadius: 4,
+                                borderTopRightRadius: 8,
+                                borderBottomLeftRadius: 8,
+                                borderTopLeftRadius: 4,
+                                padding: 0.4,
+                                fontSize: 32,
+                                color: 'secondary.main'
+                            }}
+                            onClick={() => dispatch(toggleTheme())}
+                        />
+                    )}
+                    <MoreHoriz
+                        onClick={handleMenuOpen}
+                        sx={{
+                            backgroundColor: 'light.secondary',
+                            borderBottomRightRadius: 4,
+                            borderTopRightRadius: 8,
+                            borderBottomLeftRadius: 8,
+                            borderTopLeftRadius: 4,
+                            padding: 0.4,
+                            fontSize: 32,
+                            cursor: 'pointer',
+                            color: 'secondary.main'
+                        }}
+                    />
+
+                    <Menu
+                        open={menuOpen}
+                        anchorEl={anchorEl}
+                        onClose={handleMenuClose}
+                        elevation={1}
+                        autoFocus={true}>
+                        <MenuItem>
+                            <NavLink
+                                path="/profile"
+                                label="Profile"
+                                active={pathname === '/profile'}
+                            />
+                        </MenuItem>
+                        <MenuItem>
+                            <NavLink
+                                path="/wishlist"
+                                label="Wishlist"
+                                active={pathname === '/wishlist'}
+                            />
+                        </MenuItem>
+                        <MenuItem>
+                            <NavLink
+                                path="/settings"
+                                label="Settings"
+                                active={pathname === '/settings'}
+                            />
+                        </MenuItem>
+                        <MenuItem>
+                            <NavLink
+                                path="/change-password"
+                                label="Overview"
+                                active={pathname === '/change-password'}
+                            />
+                        </MenuItem>
+                        <MenuItem>
+                            <Button
+                                sx={{
+                                    textTransform: 'capitalize',
+                                    color: 'text.secondary',
+                                }} size="large">
+                                Logout
+                            </Button>
+                        </MenuItem>
+                    </Menu>
+                </Stack>
+            </Stack>
+        </Toolbar>
+    )
+}
+
+export default AuthMobileHeader;

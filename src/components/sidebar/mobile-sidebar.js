@@ -1,7 +1,30 @@
 import {Accordion, AccordionDetails, AccordionSummary, Box, Button, Stack} from "@mui/material";
 import SidebarLink from "../shared/sidebar-link";
 import {useLocation} from "react-router-dom";
-import {ChevronRight, Close, DarkMode, Home, HomeOutlined, LightMode} from "@mui/icons-material";
+import {
+    AutoAwesome,
+    AutoAwesomeOutlined,
+    ChevronRight,
+    Close,
+    ContactPage,
+    ContactPageOutlined,
+    DarkMode,
+    Flare,
+    FlareOutlined,
+    Grade,
+    GradeOutlined,
+    HelpCenter,
+    HelpCenterOutlined,
+    Home,
+    HomeOutlined,
+    Info,
+    InfoOutlined,
+    LightMode,
+    QrCode,
+    QrCodeOutlined,
+    ViewCarousel,
+    ViewCarouselOutlined
+} from "@mui/icons-material";
 import {closeDrawer, selectUI, toggleTheme} from "../../redux/features/ui/ui-slice";
 import {useDispatch, useSelector} from "react-redux";
 
@@ -120,7 +143,7 @@ const MobileSidebar = () => {
                                 fullWidth={true}
                                 startIcon={
                                     pathname.includes('medallion') && pathname.includes('medallion') ?
-                                        (<Home sx={{
+                                        (<QrCode sx={{
                                             cursor: 'pointer',
                                             color: 'secondary.main',
                                             borderBottomRightRadius: 4,
@@ -131,7 +154,7 @@ const MobileSidebar = () => {
                                             fontSize: 36,
                                             backgroundColor: 'light.secondary'
                                         }}/>) :
-                                        (<HomeOutlined sx={{
+                                        (<QrCodeOutlined sx={{
                                             cursor: 'pointer',
                                             color: 'text.secondary',
                                             borderBottomRightRadius: 4,
@@ -167,11 +190,11 @@ const MobileSidebar = () => {
                     <AccordionDetails>
                         <Stack direction="column" spacing={1}>
                             <SidebarLink
-                                active={pathname.includes('marijuana')}
+                                active={pathname === '/medallion/overview'}
                                 label="Overview"
                                 path="/medallion/overview"
                                 icon={pathname === '/medallion/overview' ?
-                                    (<Home sx={{
+                                    (<AutoAwesome sx={{
                                             cursor: 'pointer',
                                             color: 'secondary.main',
                                             borderBottomRightRadius: 4,
@@ -182,7 +205,7 @@ const MobileSidebar = () => {
                                             fontSize: 36,
                                             backgroundColor: 'light.secondary'
                                         }}/>
-                                    ) : (<HomeOutlined sx={{
+                                    ) : (<AutoAwesomeOutlined sx={{
                                         cursor: 'pointer',
                                         color: 'text.secondary',
                                         borderBottomRightRadius: 4,
@@ -195,11 +218,11 @@ const MobileSidebar = () => {
                                 }
                             />
                             <SidebarLink
-                                active={pathname.includes('medallion')}
+                                active={pathname === '/medallion/features'}
                                 label="Features"
                                 path="/medallion/features"
                                 icon={pathname === '/medallion/features' ?
-                                    (<Home sx={{
+                                    (<Flare sx={{
                                         cursor: 'pointer',
                                         color: 'secondary.main',
                                         borderBottomRightRadius: 4,
@@ -210,7 +233,7 @@ const MobileSidebar = () => {
                                         fontSize: 36,
                                         backgroundColor: 'light.secondary'
                                     }}/>) :
-                                    (<HomeOutlined sx={{
+                                    (<FlareOutlined sx={{
                                         cursor: 'pointer',
                                         color: 'text.secondary',
                                         borderBottomRightRadius: 4,
@@ -231,7 +254,7 @@ const MobileSidebar = () => {
                     path="/features"
                     icon={
                         pathname === '/features' ? (
-                            <Home
+                            <Grade
                                 sx={{
                                     cursor: 'pointer',
                                     color: 'secondary.main',
@@ -244,7 +267,7 @@ const MobileSidebar = () => {
                                     backgroundColor: 'light.secondary'
                                 }}/>
                         ) : (
-                            <HomeOutlined
+                            <GradeOutlined
                                 sx={{
                                     cursor: 'pointer',
                                     color: 'text.secondary',
@@ -261,12 +284,12 @@ const MobileSidebar = () => {
 
 
                 <SidebarLink
-                    label="Stories"
-                    active={pathname === '/stories'}
-                    path="/stories"
+                    label="Our Stories"
+                    active={pathname === '/our-stories'}
+                    path="/our-stories"
                     icon={
-                        pathname === '/stories' ? (
-                            <Home
+                        pathname === '/our-stories' ? (
+                            <ViewCarousel
                                 sx={{
                                     cursor: 'pointer',
                                     color: 'secondary.main',
@@ -279,7 +302,7 @@ const MobileSidebar = () => {
                                     backgroundColor: 'light.secondary'
                                 }}/>
                         ) : (
-                            <HomeOutlined
+                            <ViewCarouselOutlined
                                 sx={{
                                     cursor: 'pointer',
                                     color: 'text.secondary',
@@ -301,7 +324,7 @@ const MobileSidebar = () => {
                     path="/help-center"
                     icon={
                         pathname === '/help-center' ? (
-                            <Home
+                            <HelpCenter
                                 sx={{
                                     cursor: 'pointer',
                                     color: 'secondary.main',
@@ -314,7 +337,7 @@ const MobileSidebar = () => {
                                     backgroundColor: 'light.secondary'
                                 }}/>
                         ) : (
-                            <HomeOutlined
+                            <HelpCenterOutlined
                                 sx={{
                                     cursor: 'pointer',
                                     color: 'text.secondary',
@@ -336,7 +359,7 @@ const MobileSidebar = () => {
                     path="/about"
                     icon={
                         pathname === '/about' ? (
-                            <Home
+                            <Info
                                 sx={{
                                     cursor: 'pointer',
                                     color: 'secondary.main',
@@ -349,7 +372,7 @@ const MobileSidebar = () => {
                                     backgroundColor: 'light.secondary'
                                 }}/>
                         ) : (
-                            <HomeOutlined
+                            <InfoOutlined
                                 sx={{
                                     cursor: 'pointer',
                                     color: 'text.secondary',
@@ -371,7 +394,7 @@ const MobileSidebar = () => {
                     path="/contact"
                     icon={
                         pathname === '/contact' ? (
-                            <Home
+                            <ContactPage
                                 sx={{
                                     cursor: 'pointer',
                                     color: 'secondary.main',
@@ -384,7 +407,7 @@ const MobileSidebar = () => {
                                     backgroundColor: 'light.secondary'
                                 }}/>
                         ) : (
-                            <HomeOutlined
+                            <ContactPageOutlined
                                 sx={{
                                     cursor: 'pointer',
                                     color: 'text.secondary',

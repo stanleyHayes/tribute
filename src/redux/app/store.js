@@ -19,6 +19,15 @@ const store = configureStore({
     },
     preloadedState: {
         ui: {themeVariant, activePath: '/', drawerOpen: false},
+        auth: {
+            authData: {
+                firstName: 'Inigo',
+                lastName: 'Lopez',
+                username: 'inigo.lopez',
+                email: 'inigo.lopez@societyofjesus.org',
+                fullName: 'Inigo Lopez'
+            }
+        }
     }
 });
 
