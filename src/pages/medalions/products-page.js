@@ -43,7 +43,7 @@ const ProductsPage = () => {
     return (
         <AuthLayout>
             {loading && <LinearProgress variant="query" color="secondary"/>}
-            <Box sx={{py: 4}}>
+            <Box sx={{pt: 4}}>
                 <Container>
                     {error && <Alert severity="error"><AlertTitle>{error}</AlertTitle></Alert>}
                     <form onSubmit={formik.handleSubmit}>
@@ -110,34 +110,37 @@ const ProductsPage = () => {
 
             <Divider variant="fullWidth" sx={{my: 3}} light={true}/>
 
-            <Container>
-                {medallions && medallions.length === 0 ? (
-                    <Box sx={{
-                        minHeight: '30vh',
-                        borderRadius: 0.5,
-                        backgroundColor: 'background.paper',
-                        alignItems: 'center',
-                        display: 'flex',
-                        justifyContent: 'center'
-                    }}>
-                        <Typography
-                            variant="body1"
-                            align="center" sx={{textTransform: 'uppercase', color: 'text.primary'}}>
-                            No medallions available
-                        </Typography>
-                    </Box>
-                ) : (
-                    <Grid container={true} spacing={4}>
-                        {medallions && medallions.map(medallion => {
-                            return (
-                                <Grid item={true} xs={12} md={6} lg={4} key={medallion._id}>
-                                    <Medallion medallion={medallion}/>
-                                </Grid>
-                            )
-                        })}
-                    </Grid>
-                )}
-            </Container>
+            <Box sx={{py: 4}}>
+                <Container>
+                    {medallions && medallions.length === 0 ? (
+                        <Box sx={{
+                            minHeight: '30vh',
+                            borderRadius: 0.5,
+                            backgroundColor: 'background.paper',
+                            alignItems: 'center',
+                            display: 'flex',
+                            justifyContent: 'center'
+                        }}>
+                            <Typography
+                                variant="body1"
+                                align="center" sx={{textTransform: 'uppercase', color: 'text.primary'}}>
+                                No medallions available
+                            </Typography>
+                        </Box>
+                    ) : (
+                        <Grid container={true} spacing={4}>
+                            {medallions && medallions.map(medallion => {
+                                return (
+                                    <Grid item={true} xs={12} md={6} lg={4} key={medallion._id}>
+                                        <Medallion medallion={medallion}/>
+                                    </Grid>
+                                )
+                            })}
+                        </Grid>
+                    )}
+                </Container>
+            </Box>
+
         </AuthLayout>
     )
 }

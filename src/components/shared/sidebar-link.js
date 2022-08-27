@@ -3,14 +3,17 @@ import {Button, Stack} from "@mui/material";
 import {useDispatch} from "react-redux";
 import {changePath, closeDrawer} from "../../redux/features/ui/ui-slice";
 import {ChevronRight} from "@mui/icons-material";
+import {useNavigate} from "react-router";
 
 const SidebarLink = ({path, label, active, icon}) => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleClick = () => {
         dispatch(changePath(path));
         dispatch(closeDrawer());
+        navigate(path);
     }
 
     return (

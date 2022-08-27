@@ -1,6 +1,6 @@
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {changePath} from "../../redux/features/ui/ui-slice";
+import {changePath, closeDrawer} from "../../redux/features/ui/ui-slice";
 import {Button, Stack} from "@mui/material";
 
 const SidebarNavLink = ({path, label, active, icon}) => {
@@ -10,6 +10,7 @@ const SidebarNavLink = ({path, label, active, icon}) => {
 
     const handleClick = () => {
         dispatch(changePath(path));
+        dispatch(closeDrawer());
         navigate(path);
     }
 
