@@ -136,10 +136,10 @@ const VerifyOtpPage = () => {
                                             {authError && (
                                                 <Alert
                                                     sx={{
-                                                        borderTopRightRadius: 32,
-                                                        borderBottomRightRadius: 0,
-                                                        borderBottomLeftRadius: 32,
-                                                        borderTopLeftRadius: 32,
+                                                        borderBottomRightRadius: 4,
+                                                        borderTopRightRadius: 12,
+                                                        borderBottomLeftRadius: 12,
+                                                        borderTopLeftRadius: 4,
                                                     }} severity="error">
                                                     <AlertTitle>{authError}</AlertTitle>
                                                 </Alert>
@@ -148,10 +148,10 @@ const VerifyOtpPage = () => {
                                             {authMessage && (
                                                 <Alert
                                                     sx={{
-                                                        borderTopRightRadius: 32,
-                                                        borderBottomRightRadius: 0,
-                                                        borderBottomLeftRadius: 32,
-                                                        borderTopLeftRadius: 32,
+                                                        borderBottomRightRadius: 4,
+                                                        borderTopRightRadius: 12,
+                                                        borderBottomLeftRadius: 12,
+                                                        borderTopLeftRadius: 4,
                                                     }}
                                                     severity="error">
                                                     <AlertTitle>{authMessage}</AlertTitle>
@@ -171,29 +171,29 @@ const VerifyOtpPage = () => {
                                                         value={formik.values.otp}
                                                         name="otp"
                                                         sx={{
-                                                            borderTopRightRadius: 32,
-                                                            borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32,
+                                                            borderBottomRightRadius: 4,
+                                                            borderTopRightRadius: 12,
+                                                            borderBottomLeftRadius: 12,
+                                                            borderTopLeftRadius: 4,
                                                         }}
                                                         type={showPassword ? 'text' : 'password'}
                                                         endAdornment={
                                                             <InputAdornment
                                                                 sx={{
-                                                                    borderTopRightRadius: 32,
-                                                                    borderBottomRightRadius: 0,
-                                                                    borderBottomLeftRadius: 32,
-                                                                    borderTopLeftRadius: 32
+                                                                    borderBottomRightRadius: 4,
+                                                                    borderTopRightRadius: 12,
+                                                                    borderBottomLeftRadius: 12,
+                                                                    borderTopLeftRadius: 4,
                                                                 }}
                                                                 position="end">
                                                                 {showPassword ?
                                                                     <VisibilityOff
                                                                         onClick={() => setShowPassword(false)}
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
-                                                                            borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderBottomRightRadius: 4,
+                                                                            borderTopRightRadius: 12,
+                                                                            borderBottomLeftRadius: 12,
+                                                                            borderTopLeftRadius: 4,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             backgroundColor: 'light.secondary',
@@ -205,10 +205,10 @@ const VerifyOtpPage = () => {
                                                                     <Visibility
                                                                         onClick={() => setShowPassword(true)}
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
-                                                                            borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderBottomRightRadius: 4,
+                                                                            borderTopRightRadius: 12,
+                                                                            borderBottomLeftRadius: 12,
+                                                                            borderTopLeftRadius: 4,
                                                                             cursor: 'pointer',
                                                                             backgroundColor: 'light.secondary',
                                                                             color: 'secondary.main',
@@ -250,10 +250,10 @@ const VerifyOtpPage = () => {
                                                         variant="outlined"
                                                         size="small"
                                                         sx={{
-                                                            borderTopRightRadius: 32,
-                                                            borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32,
+                                                            borderBottomRightRadius: 4,
+                                                            borderTopRightRadius: 12,
+                                                            borderBottomLeftRadius: 12,
+                                                            borderTopLeftRadius: 4,
                                                         }}>
                                                         Resend OTP
                                                     </Button>
@@ -265,10 +265,10 @@ const VerifyOtpPage = () => {
                                                 size="large"
                                                 color="secondary"
                                                 sx={{
-                                                    borderTopRightRadius: 32,
-                                                    borderBottomRightRadius: 0,
-                                                    borderBottomLeftRadius: 32,
-                                                    borderTopLeftRadius: 32,
+                                                    borderBottomRightRadius: 4,
+                                                    borderTopRightRadius: 12,
+                                                    borderBottomLeftRadius: 12,
+                                                    borderTopLeftRadius: 4,
                                                     textTransform: 'capitalize',
                                                     py: 1.2
                                                 }}

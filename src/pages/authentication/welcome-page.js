@@ -43,10 +43,10 @@ const WelcomePage = () => {
                                     <Button
                                         fullWidth={true}
                                         sx={{
-                                            borderTopRightRadius: 32,
-                                            borderBottomRightRadius: 0,
-                                            borderBottomLeftRadius: 32,
-                                            borderTopLeftRadius: 32,
+                                            borderBottomRightRadius: 4,
+                                            borderTopRightRadius: 12,
+                                            borderBottomLeftRadius: 12,
+                                            borderTopLeftRadius: 4,
                                             textTransform: 'capitalize'
                                         }}
                                         color="secondary"
@@ -63,10 +63,10 @@ const WelcomePage = () => {
                                         fullWidth={true}
                                         sx={{
                                             textTransform: 'capitalize',
-                                            borderTopRightRadius: 32,
-                                            borderBottomRightRadius: 0,
-                                            borderBottomLeftRadius: 32,
-                                            borderTopLeftRadius: 32,
+                                            borderBottomRightRadius: 4,
+                                            borderTopRightRadius: 12,
+                                            borderBottomLeftRadius: 12,
+                                            borderTopLeftRadius: 4,
                                         }}
                                         variant="outlined"
                                         disableElevation={true}>

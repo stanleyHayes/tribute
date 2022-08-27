@@ -81,7 +81,7 @@ const LoginPage = () => {
                             maxHeight: '100vh',
                             width: '100%',
                             height: '100%',
-                            objectFit: 'cover',
+                            objectFit: 'contain',
                             objectPosition: 'center'
                         }}
                         alt=""
@@ -91,13 +91,13 @@ const LoginPage = () => {
             </Box>
             <Box sx={{
                 display: 'flex',
+                flex: 1,
                 alignItems: 'center',
-                flexBasis: '30%',
                 backgroundColor: 'background.paper',
                 maxHeight: '100vh',
                 overflowY: {sx: 'scroll', lg: 'hidden'}
             }}>
-                <Container>
+                <Container maxWidth="xs">
                     {authLoading && <LinearProgress variant="query" color="secondary"/>}
                     <Box mb={2}>
                         <Button
@@ -271,10 +271,10 @@ const LoginPage = () => {
                                     sx={{
                                         textTransform: 'capitalize',
                                         py: 1.2,
-                                        borderTopRightRadius: 32,
-                                        borderBottomRightRadius: 0,
-                                        borderBottomLeftRadius: 32,
-                                        borderTopLeftRadius: 32,
+                                        borderBottomRightRadius: 4,
+                                        borderTopRightRadius: 12,
+                                        borderBottomLeftRadius: 12,
+                                        borderTopLeftRadius: 4,
                                     }}
                                     fullWidth={true}
                                     loadingPosition="start"

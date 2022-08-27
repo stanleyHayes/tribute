@@ -1,14 +1,14 @@
 import {Box, Button, Container, Stack} from "@mui/material";
 import {useLocation} from "react-router";
 import {
-    Business,
-    BusinessOutlined,
     Dashboard,
     DashboardOutlined,
     Face,
     FaceOutlined,
     Favorite,
-    FavoriteBorder, Inventory, InventoryOutlined,
+    FavoriteBorder,
+    Inventory,
+    InventoryOutlined,
     LogoutOutlined,
     Settings,
     SettingsOutlined,

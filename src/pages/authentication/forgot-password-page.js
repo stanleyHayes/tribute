@@ -140,10 +140,10 @@ const ForgotPasswordPage = () => {
                                             sx={{
                                                 textTransform: 'capitalize',
                                                 py: 1.2,
-                                                borderTopRightRadius: 32,
-                                                borderBottomRightRadius: 0,
-                                                borderBottomLeftRadius: 32,
-                                                borderTopLeftRadius: 32,
+                                                borderBottomRightRadius: 4,
+                                                borderTopRightRadius: 12,
+                                                borderBottomLeftRadius: 12,
+                                                borderTopLeftRadius: 4,
                                             }}
                                             loadingPosition="start"
                                             startIcon={formik.isSubmitting ?

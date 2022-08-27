@@ -1,10 +1,9 @@
-import {Badge, Box, Button, MenuItem, Stack, Toolbar, Menu} from "@mui/material";
+import {Badge, Box, Button, Menu, MenuItem, Stack, Toolbar} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {DarkMode, LightMode, LogoutOutlined, Menu as MUIIcon, MoreHoriz, ShoppingBagOutlined} from "@mui/icons-material";
+import {DarkMode, LightMode, Menu as MUIIcon, MoreHoriz, ShoppingBagOutlined} from "@mui/icons-material";
 import {openDrawer, selectUI, toggleTheme} from "../../../redux/features/ui/ui-slice";
 import {Link, useLocation} from "react-router-dom";
 import NavLink from "../../shared/nav-link";
-import {selectAuth} from "../../../redux/features/auth/auth-slice";
 import {useState} from "react";
 
 const AuthMobileHeader = () => {
@@ -12,8 +11,6 @@ const AuthMobileHeader = () => {
     const dispatch = useDispatch();
     const {themeVariant} = useSelector(selectUI);
     const {pathname} = useLocation();
-
-    const {authData} = useSelector(selectAuth)
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
