@@ -3,6 +3,7 @@ import {Box} from "@mui/material";
 const Overlay = ({children, image}) => {
     return (
         <Box sx={{height: '100vh', width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.4)', position: 'relative'}}>
+
             <img
                 alt=""
                 src={image}
@@ -29,6 +30,7 @@ const Overlay = ({children, image}) => {
                 }}>
                 {children}
             </Box>
+
         </Box>
     )
 }

@@ -31,6 +31,9 @@ import DashboardPage from "./pages/dashboard/dashboard-page";
 import ProductsPage from "./pages/medalions/products-page";
 import WishlistPage from "./pages/cart/wishlist-page";
 import CartPage from "./pages/cart/cart-page";
+import CheckoutPage from "./pages/checkout/checkout-page";
+import AuthCheckoutPage from "./pages/checkout/auth-checkout-page";
+import OrdersPage from "./pages/orders/orders-page";
 
 function App() {
     const {themeVariant} = useSelector(selectUI);
@@ -57,6 +60,9 @@ function App() {
                 <Route element={<MedallionPage/>} path="/medallion/overview"/>
                 <Route element={<BuyMedallionsPage/>} path="/medallions"/>
                 <Route element={<ProductsPage/>} path="/products"/>
+                <Route element={<OrdersPage/>} path="/orders"/>
+                <Route element={<CheckoutPage/>} path="/checkout"/>
+                <Route element={<AuthCheckoutPage/>} path="/a/checkout"/>
                 <Route element={<VerifyAccountPage/>} exact={true} path="/auth/verify/:token"/>
                 <Route element={<VerificationAcknowledgmentPage/>} exact={true} path="/account/verify/success"/>
                 <Route element={<RegisterPage/>} exact={true} path="/auth/register"/>

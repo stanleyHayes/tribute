@@ -36,8 +36,6 @@ const AuthDesktopHeader = () => {
         setMenuOpen(false);
     }
 
-    console.log(authData)
-
     return (
         <Toolbar variant="regular">
             <Container maxWidth="xl">
