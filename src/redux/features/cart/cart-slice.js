@@ -7,30 +7,33 @@ const cartSlice = createSlice({
     },
     reducers: {
         addItem: (state, action) => {
-            const item = state.items.find(item => item._id === action.payload._id);
-            if(item){
+            const item = state.items.find(item => item._id === action.payload.item._id);
+            if (item) {
                 state.items = [...state.items.map(item => {
-                    if(item._id === action.payload._id){
-                        item.quantity = item.quantity + 1
+                    if (item._id === action.payload.item._id) {
+                        item.quantity = item.quantity + action.payload.item.quantity
                         return item;
                     }
                     return item;
                 })]
-            }else{
-                state.items = [{quantity: 1, item: action.payload}]
+            } else {
+                state.items = [{
+                    quantity: action.payload.quantity ? action.payload.quantity : 1,
+                    item: action.payload.item
+                }]
             }
         },
         removeItem: (state, action) => {
             const item = state.items.find(item => item._id === action.payload._id);
-            if(item){
+            if (item) {
                 state.items = [...state.items.filter(item => item._id !== action.payload._id)];
             }
         },
         increaseItem: (state, action) => {
             const item = state.items.find(item => item._id === action.payload._id);
-            if(item){
+            if (item) {
                 state.items = [...state.items.map(item => {
-                    if(item._id === action.payload._id){
+                    if (item._id === action.payload._id) {
                         item.quantity = item.quantity + 1
                         return item;
                     }
@@ -40,12 +43,12 @@ const cartSlice = createSlice({
         },
         decreaseItem: (state, action) => {
             const item = state.items.find(item => item._id === action.payload._id);
-            if(item){
-                if(item.quantity === 1){
+            if (item) {
+                if (item.quantity === 1) {
                     state.items = [...state.items.filter(item => item._id !== action.payload._id)];
-                }else{
+                } else {
                     state.items = [...state.items.map(item => {
-                        if(item._id === action.payload._id){
+                        if (item._id === action.payload._id) {
                             item.quantity = item.quantity - 1
                             return item;
                         }

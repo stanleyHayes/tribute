@@ -5,6 +5,7 @@ import {openDrawer, selectUI, toggleTheme} from "../../../redux/features/ui/ui-s
 import {Link, useLocation} from "react-router-dom";
 import NavLink from "../../shared/nav-link";
 import {useState} from "react";
+import {selectCart} from "../../../redux/features/cart/cart-slice";
 
 const AuthMobileHeader = () => {
 
@@ -25,9 +26,15 @@ const AuthMobileHeader = () => {
         setMenuOpen(false);
     }
 
+    const {items} = useSelector(selectCart);
+
     return (
         <Toolbar variant="regular">
-            <Stack sx={{width: '100%'}} justifyContent="space-between" alignItems="center" direction="row">
+            <Stack
+                sx={{width: '100%'}}
+                justifyContent="space-between"
+                alignItems="center"
+                direction="row">
                 <Box>
                     <MUIIcon
                         sx={{
@@ -45,7 +52,7 @@ const AuthMobileHeader = () => {
                     />
                 </Box>
                 <Stack spacing={1} alignItems="center" direction="row">
-                    <Badge color="secondary" badgeContent={999} variant="dot" max={10}>
+                    <Badge color="secondary" badgeContent={items.length} variant="standard" max={100}>
                         <Link to='/cart' style={{textDecoration: 'none'}}>
                             <ShoppingBagOutlined
                                 color="secondary"
@@ -56,7 +63,7 @@ const AuthMobileHeader = () => {
                                     borderBottomLeftRadius: 12,
                                     borderTopLeftRadius: 4,
                                     padding: 0.4,
-                                    fontSize: 36,
+                                    fontSize: 32,
                                     color: 'secondary.main',
                                     cursor: 'pointer'
                                 }}

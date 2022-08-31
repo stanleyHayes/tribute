@@ -18,9 +18,12 @@ export const medallions = [
         rating: {
             average: 4.4,
             count: 1500,
-            5: {
-                count: 100,
-                percentage: 100 / 1500 * 100
+            details: {
+                'five': 50,
+                'four': 30,
+                'three': 10,
+                'two': 7,
+                'one': 3
             }
         },
         sale: {

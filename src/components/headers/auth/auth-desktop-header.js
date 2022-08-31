@@ -15,6 +15,7 @@ import {selectUI, toggleTheme} from "../../../redux/features/ui/ui-slice";
 import NavLink from "../../shared/nav-link";
 import {selectAuth} from "../../../redux/features/auth/auth-slice";
 import {UTILS} from "../../../utils/utils";
+import {selectCart} from "../../../redux/features/cart/cart-slice";
 
 const AuthDesktopHeader = () => {
 
@@ -35,6 +36,8 @@ const AuthDesktopHeader = () => {
         setAnchorEl(null);
         setMenuOpen(false);
     }
+
+    const {items} = useSelector(selectCart);
 
     return (
         <Toolbar variant="regular">
@@ -72,7 +75,7 @@ const AuthDesktopHeader = () => {
                         {authData?.fullName}
                     </Button>
 
-                    <Badge color="secondary" badgeContent={999} variant="dot" max={10}>
+                    <Badge color="secondary" badgeContent={items.length} variant="standard" max={100}>
                         <Link to='/cart' style={{textDecoration: 'none'}}>
                             <ShoppingBagOutlined
                                 color="secondary"
@@ -83,7 +86,7 @@ const AuthDesktopHeader = () => {
                                     borderBottomLeftRadius: 12,
                                     borderTopLeftRadius: 4,
                                     padding: 0.4,
-                                    fontSize: 32,
+                                    fontSize: 28,
                                     color: 'secondary.main',
                                     cursor: 'pointer'
                                 }}
@@ -101,7 +104,7 @@ const AuthDesktopHeader = () => {
                                     borderBottomLeftRadius: 12,
                                     borderTopLeftRadius: 4,
                                     padding: 0.4,
-                                    fontSize: 32,
+                                    fontSize: 28,
                                     color: 'secondary.main',
                                     cursor: 'pointer'
                                 }}

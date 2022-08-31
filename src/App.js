@@ -34,6 +34,8 @@ import CartPage from "./pages/cart/cart-page";
 import CheckoutPage from "./pages/checkout/checkout-page";
 import AuthCheckoutPage from "./pages/checkout/auth-checkout-page";
 import OrdersPage from "./pages/orders/orders-page";
+import ProductDetailPage from "./pages/medalions/product-detail-page";
+import MedallionDetailPage from "./pages/medalions/medallion-detail-page";
 
 function App() {
     const {themeVariant} = useSelector(selectUI);
@@ -58,8 +60,10 @@ function App() {
                 <Route element={<ChangePasswordPage/>} path="/change-password"/>
                 <Route element={<MedallionFeaturesPage/>} path="/medallion/features"/>
                 <Route element={<MedallionPage/>} path="/medallion/overview"/>
+                <Route element={<MedallionDetailPage/>} path="/medallions/:productID"/>
                 <Route element={<BuyMedallionsPage/>} path="/medallions"/>
                 <Route element={<ProductsPage/>} path="/products"/>
+                <Route element={<ProductDetailPage/>} path="/products/:productID"/>
                 <Route element={<OrdersPage/>} path="/orders"/>
                 <Route element={<CheckoutPage/>} path="/checkout"/>
                 <Route element={<AuthCheckoutPage/>} path="/a/checkout"/>
