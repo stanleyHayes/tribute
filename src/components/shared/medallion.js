@@ -124,7 +124,8 @@ const Medallion = ({medallion}) => {
                                     borderTopLeftRadius: 4,
                                     padding: 0.4,
                                     fontSize: 24,
-                                    color: 'secondary.main'
+                                    color: 'secondary.main',
+                                    cursor: 'pointer'
                                 }}
                                 onClick={() => dispatch(toggleTheme())}
                             />
@@ -139,9 +140,10 @@ const Medallion = ({medallion}) => {
                                     borderTopLeftRadius: 4,
                                     padding: 0.4,
                                     fontSize: 24,
-                                    color: 'secondary.main'
+                                    color: 'secondary.main',
+                                    cursor: 'pointer'
                                 }}
-                                onClick={() => dispatch(CART_ACTION_CREATORS.addItem(medallion))}
+                                onClick={() => dispatch(CART_ACTION_CREATORS.addItem({item: medallion}))}
                             />
                         </Stack>
                     </Stack>

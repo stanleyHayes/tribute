@@ -38,10 +38,10 @@ const NotFoundPage = () => {
                                     fullWidth={true}
                                     sx={{
                                         textTransform: 'capitalize',
-                                        borderTopRightRadius: 32,
                                         borderBottomRightRadius: 0,
-                                        borderBottomLeftRadius: 32,
-                                        borderTopLeftRadius: 32,
+                                        borderTopRightRadius: 12,
+                                        borderBottomLeftRadius: 12,
+                                        borderTopLeftRadius: 0,
                                     }}
                                     variant="outlined"
                                     disableElevation={true}>

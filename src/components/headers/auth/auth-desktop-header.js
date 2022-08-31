@@ -40,9 +40,9 @@ const AuthDesktopHeader = () => {
     const {items} = useSelector(selectCart);
 
     return (
-        <Toolbar variant="regular">
+        <Toolbar variant="regular"
+                 sx={{borderBottomWidth: 1, borderBottomStyle: 'dashed', borderBottomColor: 'divider'}}>
             <Container maxWidth="xl">
-
                 <Stack spacing={2} justifyContent="flex-end" alignItems="center" direction="row">
                     <Button
                         startIcon={
