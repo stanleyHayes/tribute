@@ -24,8 +24,22 @@ const responsive = {
     }
 };
 
+const calculateTotalPrice = items => {
+    return items.reduce((accumulator, item) => {
+        return accumulator + (item.item.price.amount * item.quantity);
+    }, 0);
+}
+
+const calculateTotalQuantity = items => {
+    return items.reduce((accumulator, item) => {
+        return accumulator + item.quantity;
+    }, 0);
+}
+
 
 export const UTILS = {
     getInitials,
-    responsive
+    responsive,
+    calculateTotalPrice,
+    calculateTotalQuantity
 };

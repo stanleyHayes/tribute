@@ -26,12 +26,9 @@ const AuthCartPage = () => {
         })
     });
 
-
-    console.log(items);
-
     return (
         <AuthLayout>
-            <Box sx={{py: 8}}>
+            <Box sx={{py: 4}}>
                 <Container>
                     <Grid container={true} spacing={4}>
                         <Grid item={true} xs={12} md={8}>
@@ -81,7 +78,7 @@ const AuthCartPage = () => {
                                         items.map((item, index) => {
                                             return (
                                                 <Box key={index}>
-                                                    <CartItem item={item.item}/>
+                                                    <CartItem item={item}/>
                                                 </Box>
                                             )
                                         })
@@ -149,50 +146,57 @@ const AuthCartPage = () => {
                                             </Button>
                                         </Grid>
                                     </Grid>
-                                    <Divider sx={{my: 3}} variant="fullWidth" light={true} />
+                                    <Divider sx={{my: 3}} variant="fullWidth" light={true}/>
                                     <Stack direction="column" spacing={2}>
-                                        <Stack sx={{width: '100%'}} direction="row" alignItems="center" justifyContent="space-between">
+                                        <Stack sx={{width: '100%'}} direction="row" alignItems="center"
+                                               justifyContent="space-between">
                                             <Typography variant="body1" sx={{color: 'text.secondary'}}>
                                                 Subtotal
                                             </Typography>
-                                            <Typography variant="body1" sx={{color: 'text.primary', fontWeight: 'bold'}}>
-                                                {currencyFormatter.format(50,{code: 'USD'})}
+                                            <Typography variant="body1"
+                                                        sx={{color: 'text.primary', fontWeight: 'bold'}}>
+                                                {currencyFormatter.format(50, {code: 'USD'})}
                                             </Typography>
                                         </Stack>
 
-                                        <Stack sx={{width: '100%'}} direction="row" alignItems="center" justifyContent="space-between">
+                                        <Stack sx={{width: '100%'}} direction="row" alignItems="center"
+                                               justifyContent="space-between">
                                             <Typography variant="body1" sx={{color: 'text.secondary'}}>
                                                 Estimated Shipping
                                             </Typography>
-                                            <Typography variant="body1" sx={{color: 'text.primary', fontWeight: 'bold'}}>
-                                                {currencyFormatter.format(50,{code: 'USD'})}
+                                            <Typography variant="body1"
+                                                        sx={{color: 'text.primary', fontWeight: 'bold'}}>
+                                                {currencyFormatter.format(50, {code: 'USD'})}
                                             </Typography>
                                         </Stack>
 
-                                        <Stack sx={{width: '100%'}} direction="row" alignItems="center" justifyContent="space-between">
+                                        <Stack sx={{width: '100%'}} direction="row" alignItems="center"
+                                               justifyContent="space-between">
                                             <Typography variant="body1" sx={{color: 'text.secondary'}}>
                                                 Estimated Tax
                                             </Typography>
-                                            <Typography variant="body1" sx={{color: 'text.primary', fontWeight: 'bold'}}>
-                                                {currencyFormatter.format(50,{code: 'USD'})}
+                                            <Typography variant="body1"
+                                                        sx={{color: 'text.primary', fontWeight: 'bold'}}>
+                                                {currencyFormatter.format(50, {code: 'USD'})}
                                             </Typography>
                                         </Stack>
                                     </Stack>
 
-                                    <Divider sx={{my: 3}} variant="fullWidth" light={true} />
+                                    <Divider sx={{my: 3}} variant="fullWidth" light={true}/>
 
-                                    <Stack sx={{width: '100%'}} direction="row" alignItems="center" justifyContent="space-between">
+                                    <Stack sx={{width: '100%'}} direction="row" alignItems="center"
+                                           justifyContent="space-between">
                                         <Typography variant="body1" sx={{color: 'text.secondary', fontWeight: 'bold'}}>
                                             Total
                                         </Typography>
                                         <Typography variant="body1" sx={{color: 'text.primary', fontWeight: 'bold'}}>
-                                            {currencyFormatter.format(50,{code: 'USD'})}
+                                            {currencyFormatter.format(50, {code: 'USD'})}
                                         </Typography>
                                     </Stack>
 
-                                    <Divider sx={{my: 3}} variant="fullWidth" light={true} />
+                                    <Divider sx={{my: 3}} variant="fullWidth" light={true}/>
 
-                                    <Stack  direction="column" spacing={2}>
+                                    <Stack direction="column" spacing={2}>
                                         <Link to="/medallions" style={{textDecoration: 'none'}}>
                                             <Button
                                                 color="secondary"
