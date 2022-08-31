@@ -5,7 +5,7 @@ import {openDrawer, selectUI, toggleTheme} from "../../../redux/features/ui/ui-s
 import {Link, useLocation} from "react-router-dom";
 import NavLink from "../../shared/nav-link";
 import {useState} from "react";
-import {selectCart} from "../../../redux/features/cart/cart-slice";
+import {CART_ACTION_CREATORS, selectCart} from "../../../redux/features/cart/cart-slice";
 
 const AuthMobileHeader = () => {
 
@@ -29,7 +29,13 @@ const AuthMobileHeader = () => {
     const {items} = useSelector(selectCart);
 
     return (
-        <Toolbar variant="regular">
+        <Toolbar
+            sx={{
+                borderBottomWidth: 1,
+                borderBottomStyle: 'dashed',
+                borderBottomColor: 'divider'
+            }}
+            variant="regular">
             <Stack
                 sx={{width: '100%'}}
                 justifyContent="space-between"
@@ -52,7 +58,7 @@ const AuthMobileHeader = () => {
                     />
                 </Box>
                 <Stack spacing={1} alignItems="center" direction="row">
-                    <Badge color="secondary" badgeContent={items.length} variant="standard" max={100}>
+                    <Badge color="secondary" badgeContent={CART_ACTION_CREATORS.calculateTotalQuantity(items)} variant="standard" max={100}>
                         <Link to='/cart' style={{textDecoration: 'none'}}>
                             <ShoppingBagOutlined
                                 color="secondary"

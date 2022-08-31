@@ -1,7 +1,7 @@
 import AuthLayout from "../../components/layout/auth-layout";
 import {Box, Button, Card, CardContent, Container, Divider, Grid, Stack, TextField, Typography} from "@mui/material";
-import {useSelector} from "react-redux";
-import {selectCart} from "../../redux/features/cart/cart-slice";
+import {useDispatch, useSelector} from "react-redux";
+import {CART_ACTION_CREATORS, selectCart} from "../../redux/features/cart/cart-slice";
 import {Link} from "react-router-dom";
 import React from "react";
 import CartItem from "../../components/shared/cart-item";
@@ -12,6 +12,7 @@ import currencyFormatter from "currency-formatter";
 const AuthCartPage = () => {
 
     const {items} = useSelector(selectCart);
+    const dispatch = useDispatch();
 
     const formik = useFormik({
         initialValues: {
@@ -32,9 +33,32 @@ const AuthCartPage = () => {
                 <Container>
                     <Grid container={true} spacing={4}>
                         <Grid item={true} xs={12} md={8}>
-                            <Typography variant="h4" sx={{color: 'text.primary'}}>
-                                Shopping Bag
-                            </Typography>
+                            <Grid container={true} justifyContent="space-between" spacing={2}>
+                                <Grid item={true} xs={12} md="auto">
+                                    <Typography variant="h4" sx={{color: 'text.primary'}}>
+                                        Shopping Bag
+                                    </Typography>
+                                </Grid>
+                                {items.length > 0 && (
+                                    <Grid item={true} xs={12} md="auto">
+                                        <Button
+                                            onClick={() => dispatch(CART_ACTION_CREATORS.clearItems())}
+                                            color="error"
+                                            sx={{
+                                                textTransform: 'capitalize',
+                                                borderBottomRightRadius: 0,
+                                                borderTopRightRadius: 12,
+                                                borderBottomLeftRadius: 12,
+                                                borderTopLeftRadius: 0,
+                                            }}
+                                            variant="outlined"
+                                            disableElevation={true}>
+                                            Clear Cart
+                                        </Button>
+                                    </Grid>
+                                )}
+                            </Grid>
+
                             <Divider variant="fullWidth" sx={{my: 2}}/>
                             {items.length === 0 ? (
                                 <Box sx={{
@@ -50,7 +74,7 @@ const AuthCartPage = () => {
                                     </Typography>
                                     <Grid container={true} justifyContent="center">
                                         <Grid item={true} xs={12} md="auto">
-                                            <Link to="/medallions" style={{textDecoration: 'none'}}>
+                                            <Link to="/products" style={{textDecoration: 'none'}}>
                                                 <Button
                                                     color="secondary"
                                                     fullWidth={true}
@@ -78,7 +102,7 @@ const AuthCartPage = () => {
                                         items.map((item, index) => {
                                             return (
                                                 <Box key={index}>
-                                                    <CartItem item={item}/>
+                                                    <CartItem cartItem={item}/>
                                                 </Box>
                                             )
                                         })
@@ -153,9 +177,10 @@ const AuthCartPage = () => {
                                             <Typography variant="body1" sx={{color: 'text.secondary'}}>
                                                 Subtotal
                                             </Typography>
-                                            <Typography variant="body1"
-                                                        sx={{color: 'text.primary', fontWeight: 'bold'}}>
-                                                {currencyFormatter.format(50, {code: 'USD'})}
+                                            <Typography
+                                                variant="body1"
+                                                sx={{color: 'text.primary', fontWeight: 'bold'}}>
+                                                {currencyFormatter.format(CART_ACTION_CREATORS.calculateTotalPrice(items), {code: 'USD'})}
                                             </Typography>
                                         </Stack>
 
@@ -164,8 +189,9 @@ const AuthCartPage = () => {
                                             <Typography variant="body1" sx={{color: 'text.secondary'}}>
                                                 Estimated Shipping
                                             </Typography>
-                                            <Typography variant="body1"
-                                                        sx={{color: 'text.primary', fontWeight: 'bold'}}>
+                                            <Typography
+                                                variant="body1"
+                                                sx={{color: 'text.primary', fontWeight: 'bold'}}>
                                                 {currencyFormatter.format(50, {code: 'USD'})}
                                             </Typography>
                                         </Stack>
@@ -175,8 +201,9 @@ const AuthCartPage = () => {
                                             <Typography variant="body1" sx={{color: 'text.secondary'}}>
                                                 Estimated Tax
                                             </Typography>
-                                            <Typography variant="body1"
-                                                        sx={{color: 'text.primary', fontWeight: 'bold'}}>
+                                            <Typography
+                                                variant="body1"
+                                                sx={{color: 'text.primary', fontWeight: 'bold'}}>
                                                 {currencyFormatter.format(50, {code: 'USD'})}
                                             </Typography>
                                         </Stack>

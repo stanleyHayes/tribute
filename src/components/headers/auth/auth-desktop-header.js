@@ -15,7 +15,7 @@ import {selectUI, toggleTheme} from "../../../redux/features/ui/ui-slice";
 import NavLink from "../../shared/nav-link";
 import {selectAuth} from "../../../redux/features/auth/auth-slice";
 import {UTILS} from "../../../utils/utils";
-import {selectCart} from "../../../redux/features/cart/cart-slice";
+import {CART_ACTION_CREATORS, selectCart} from "../../../redux/features/cart/cart-slice";
 
 const AuthDesktopHeader = () => {
 
@@ -40,8 +40,13 @@ const AuthDesktopHeader = () => {
     const {items} = useSelector(selectCart);
 
     return (
-        <Toolbar variant="regular"
-                 sx={{borderBottomWidth: 1, borderBottomStyle: 'dashed', borderBottomColor: 'divider'}}>
+        <Toolbar
+            variant="regular"
+            sx={{
+                borderBottomWidth: 1,
+                borderBottomStyle: 'dashed',
+                borderBottomColor: 'divider'
+            }}>
             <Container maxWidth="xl">
                 <Stack spacing={2} justifyContent="flex-end" alignItems="center" direction="row">
                     <Button
@@ -75,7 +80,7 @@ const AuthDesktopHeader = () => {
                         {authData?.fullName}
                     </Button>
 
-                    <Badge color="secondary" badgeContent={items.length} variant="standard" max={100}>
+                    <Badge color="secondary" badgeContent={CART_ACTION_CREATORS.calculateTotalQuantity(items)} variant="standard" max={100}>
                         <Link to='/cart' style={{textDecoration: 'none'}}>
                             <ShoppingBagOutlined
                                 color="secondary"

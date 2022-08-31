@@ -4,23 +4,22 @@ import {CART_ACTION_CREATORS} from "../../redux/features/cart/cart-slice";
 import {useDispatch} from "react-redux";
 import {WISHLIST_ACTION_CREATORS} from "../../redux/features/wishlist/wishlist-slice";
 import {CancelOutlined, FavoriteOutlined} from "@mui/icons-material";
-import {green, red} from "@mui/material/colors";
 
-const CartItem = ({item}) => {
-    const {item: product, quantity} = item;
+const CartItem = ({cartItem}) => {
     const dispatch = useDispatch();
 
     const handleQuantityIncrease = () => {
-        if (quantity < product.stock) {
-            dispatch(CART_ACTION_CREATORS.increaseItem({item}));
+        if (cartItem.quantity < cartItem.item.stock) {
+            dispatch(CART_ACTION_CREATORS.increaseItem({...cartItem.item}));
         }
     }
     const handleQuantityDecrease = () => {
-        if (quantity < product.stock) {
-            dispatch(CART_ACTION_CREATORS.decreaseItem({item}));
-        }
+        dispatch(CART_ACTION_CREATORS.decreaseItem({...cartItem.item}));
     }
 
+    const isOnSale = () => {
+        return cartItem.item.sale.status;
+    }
     return (
         <Card
             sx={{
@@ -30,10 +29,10 @@ const CartItem = ({item}) => {
                 borderTopLeftRadius: 4
             }} elevation={0}>
             <Grid container={true} spacing={2}>
-                <Grid item={true} xs={12} md={2}>
+                <Grid item={true} xs={12} md={3}>
                     <CardMedia
                         component="img"
-                        src={product.image}
+                        src={cartItem?.item?.image}
                         sx={{
                             width: '100%',
                             height: '100%',
@@ -46,26 +45,26 @@ const CartItem = ({item}) => {
                         }}
                     />
                 </Grid>
-                <Grid item={true} xs={12} md={10}>
+                <Grid item={true} xs={12} md={9}>
                     <CardContent>
                         <Stack sx={{mb: 1}} direction="column" spacing={1}>
                             <Typography variant="h6" sx={{color: 'text.primary'}}>
-                                {product.name}
+                                {cartItem.item.name}
                             </Typography>
                             <Stack direction="row" spacing={1} justifyContent="space-between">
                                 <Typography variant="h6" sx={{color: 'text.primary'}}>
-                                    ({quantity}) x
+                                    ({cartItem.quantity}) x
                                     {
                                         currencyFormatter.format(
-                                            product?.price?.amount,
-                                            {code: product?.price?.currency})
+                                            isOnSale() ? cartItem?.item?.sale?.price?.amount : cartItem?.item?.price?.amount,
+                                            {code: cartItem?.item?.price?.currency})
                                     }
                                 </Typography>
                                 <Typography variant="h6" sx={{color: 'text.primary'}}>
                                     {
                                         currencyFormatter.format(
-                                            product?.price?.amount * quantity,
-                                            {code: product?.price?.currency})
+                                            isOnSale() ? cartItem?.item?.sale?.price?.amount * cartItem?.quantity : cartItem?.item?.price?.amount * cartItem?.quantity,
+                                            {code: cartItem?.item?.price?.currency})
                                     }
                                 </Typography>
                             </Stack>
@@ -89,7 +88,7 @@ const CartItem = ({item}) => {
                                     }}
                                     variant="contained"
                                     color="secondary"
-                                    size="small">{quantity}</Button>
+                                    size="small">{cartItem.quantity}</Button>
                                 <Button
                                     sx={{
                                         borderBottomRightRadius: 0,
@@ -103,10 +102,10 @@ const CartItem = ({item}) => {
                             </ButtonGroup>
                         </Stack>
                         <Grid container={true} spacing={2}>
-                            <Grid item={true} xs={12} md="auto">
+                            <Grid item={true} xs={6} md="auto">
                                 <Button
                                     fullWidth={true}
-                                    onClick={() => dispatch(WISHLIST_ACTION_CREATORS.addItem({item}))}
+                                    onClick={() => dispatch(WISHLIST_ACTION_CREATORS.addItem({...cartItem?.item}))}
                                     color="secondary"
                                     disableElevation={true}
                                     variant="text"
@@ -122,10 +121,10 @@ const CartItem = ({item}) => {
                                     Save for later
                                 </Button>
                             </Grid>
-                            <Grid item={true} xs={12} md="auto">
+                            <Grid item={true} xs={6} md="auto">
                                 <Button
                                     fullWidth={true}
-                                    onClick={() => dispatch(CART_ACTION_CREATORS.removeItem({item}))}
+                                    onClick={() => dispatch(CART_ACTION_CREATORS.removeItem({...cartItem?.item}))}
                                     color="error"
                                     disableElevation={true}
                                     variant="text"

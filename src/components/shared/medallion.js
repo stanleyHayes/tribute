@@ -143,7 +143,7 @@ const Medallion = ({medallion}) => {
                                     color: 'secondary.main',
                                     cursor: 'pointer'
                                 }}
-                                onClick={() => dispatch(CART_ACTION_CREATORS.addItem({item: medallion}))}
+                                onClick={() => dispatch(CART_ACTION_CREATORS.addItem({item: medallion, quantity: 1}))}
                             />
                         </Stack>
                     </Stack>
