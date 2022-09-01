@@ -26,7 +26,7 @@ const checkoutAuth = createAsyncThunk(
 const checkoutSlice = createSlice({
     name: 'checkout',
     initialState: {
-        activeStep: 1,
+        activeStep: 2,
         loading: false,
         error: null,
         address: {

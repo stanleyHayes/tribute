@@ -228,7 +228,7 @@ const AuthCartPage = () => {
                                     <Divider sx={{my: 3}} variant="fullWidth" light={true}/>
 
                                     <Stack direction="column" spacing={2}>
-                                        <Link to="/medallions" style={{textDecoration: 'none'}}>
+                                        <Link to="/checkout" style={{textDecoration: 'none'}}>
                                             <Button
                                                 color="secondary"
                                                 fullWidth={true}
