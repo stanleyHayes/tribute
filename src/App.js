@@ -29,7 +29,6 @@ import SettingsPage from "./pages/account/settings-page";
 import ChangePasswordPage from "./pages/account/change-password-page";
 import DashboardPage from "./pages/dashboard/dashboard-page";
 import ProductsPage from "./pages/medalions/products-page";
-import WishlistPage from "./pages/cart/wishlist-page";
 import CartPage from "./pages/cart/cart-page";
 import CheckoutPage from "./pages/checkout/checkout-page";
 import AuthCheckoutPage from "./pages/checkout/auth-checkout-page";
@@ -37,6 +36,7 @@ import OrdersPage from "./pages/orders/orders-page";
 import ProductDetailPage from "./pages/medalions/product-detail-page";
 import MedallionDetailPage from "./pages/medalions/medallion-detail-page";
 import AuthCartPage from "./pages/cart/auth-cart-page";
+import WishlistsPage from "./pages/wishlists/wishlists-page";
 
 function App() {
     const {themeVariant} = useSelector(selectUI);
@@ -53,7 +53,6 @@ function App() {
                 <Route element={<StoriesPage/>} path="/our-stories"/>
                 <Route element={<StoriesAuthPage/>} path="/stories"/>
                 <Route element={<ProfilePage/>} path="/profile"/>
-                <Route element={<WishlistPage/>} path="/wishlist"/>
                 <Route element={<AuthCartPage/>} path="/cart"/>
                 <Route element={<CartPage/>} path="/cart"/>
                 <Route element={<UpdateProfilePage/>} path="/update-profile"/>
@@ -67,6 +66,7 @@ function App() {
                 <Route element={<ProductsPage/>} path="/products"/>
                 <Route element={<ProductDetailPage/>} path="/products/:productID"/>
                 <Route element={<OrdersPage/>} path="/orders"/>
+                <Route element={<WishlistsPage/>} path="/wishlists"/>
                 <Route element={<CheckoutPage/>} path="/checkout"/>
                 <Route element={<AuthCheckoutPage/>} path="/a/checkout"/>
                 <Route element={<VerifyAccountPage/>} exact={true} path="/auth/verify/:token"/>

@@ -1,14 +1,21 @@
 import {Box, Button, Card, CardContent, CardMedia, Chip, Rating, Stack, Typography} from "@mui/material";
 import currencyFormatter from "currency-formatter";
-import {toggleTheme} from "../../redux/features/ui/ui-slice";
-import {AddShoppingCartOutlined, FavoriteOutlined} from "@mui/icons-material";
-import {useDispatch} from "react-redux";
+import {AddShoppingCartOutlined, Favorite, FavoriteBorderOutlined} from "@mui/icons-material";
+import {useDispatch, useSelector} from "react-redux";
 import {CART_ACTION_CREATORS} from "../../redux/features/cart/cart-slice";
 import {Link} from "react-router-dom";
+import {selectWishlist, WISHLIST_ACTION_CREATORS} from "../../redux/features/wishlist/wishlist-slice";
+import {red} from "@mui/material/colors";
 
 const Medallion = ({medallion}) => {
 
     const dispatch = useDispatch();
+    const {items} = useSelector(selectWishlist);
+
+    const isFavorite = () => {
+        const item = items.find(item => item._id === medallion._id);
+        return item !== undefined;
+    }
 
     return (
         <Card
@@ -103,10 +110,10 @@ const Medallion = ({medallion}) => {
                                 size="small"
                                 disableElevation={true}
                                 sx={{
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4,
+                                    borderTopLeftRadius: 0,
                                     textTransform: 'capitalize',
                                     backgroundColor: 'light.secondary'
                                 }}>
@@ -114,30 +121,48 @@ const Medallion = ({medallion}) => {
                             </Button>
                         </Link>
                         <Stack direction="row" spacing={2} alignItems="center">
-                            <FavoriteOutlined
-                                color="secondary"
-                                sx={{
-                                    backgroundColor: 'light.secondary',
-                                    borderBottomRightRadius: 4,
-                                    borderTopRightRadius: 8,
-                                    borderBottomLeftRadius: 8,
-                                    borderTopLeftRadius: 4,
-                                    padding: 0.4,
-                                    fontSize: 24,
-                                    color: 'secondary.main',
-                                    cursor: 'pointer'
-                                }}
-                                onClick={() => dispatch(toggleTheme())}
-                            />
+                            {isFavorite() ? (
+                                <Favorite
+                                    color="secondary"
+                                    sx={{
+                                        backgroundColor: red[100],
+                                        borderBottomRightRadius: 0,
+                                        borderTopRightRadius: 12,
+                                        borderBottomLeftRadius: 12,
+                                        borderTopLeftRadius: 0,
+                                        padding: 0.4,
+                                        fontSize: 24,
+                                        color: red[800],
+                                        cursor: 'pointer'
+                                    }}
+                                    onClick={() => dispatch(WISHLIST_ACTION_CREATORS.toggleItem(medallion))}
+                                />
+                            ) : (
+                                <FavoriteBorderOutlined
+                                    color="secondary"
+                                    sx={{
+                                        backgroundColor: 'light.secondary',
+                                        borderBottomRightRadius: 0,
+                                        borderTopRightRadius: 12,
+                                        borderBottomLeftRadius: 12,
+                                        borderTopLeftRadius: 0,
+                                        padding: 0.4,
+                                        fontSize: 24,
+                                        color: 'secondary.main',
+                                        cursor: 'pointer'
+                                    }}
+                                    onClick={() => dispatch(WISHLIST_ACTION_CREATORS.toggleItem(medallion))}
+                                />
+                            )}
 
                             <AddShoppingCartOutlined
                                 color="secondary"
                                 sx={{
                                     backgroundColor: 'light.secondary',
-                                    borderBottomRightRadius: 4,
-                                    borderTopRightRadius: 8,
-                                    borderBottomLeftRadius: 8,
-                                    borderTopLeftRadius: 4,
+                                    borderBottomRightRadius: 0,
+                                    borderTopRightRadius: 12,
+                                    borderBottomLeftRadius: 12,
+                                    borderTopLeftRadius: 0,
                                     padding: 0.4,
                                     fontSize: 24,
                                     color: 'secondary.main',

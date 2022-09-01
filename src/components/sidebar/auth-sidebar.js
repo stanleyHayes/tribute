@@ -70,10 +70,10 @@ const AuthSidebar = () => {
                     />
 
                     <SidebarNavLink
-                        icon={pathname === '/wishlist' ?
+                        icon={pathname === '/wishlists' ?
                             <Favorite sx={{color: 'secondary.main', fontSize: 24}}/> :
                             <FavoriteBorder sx={{color: 'text.secondary', fontSize: 24}}/>}
-                        active={pathname === '/wishlist'} label="Wishlist" path="/wishlist"
+                        active={pathname === '/wishlists'} label="Wishlists" path="/wishlists"
                     />
 
                     <Stack

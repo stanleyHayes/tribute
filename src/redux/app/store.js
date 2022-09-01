@@ -6,6 +6,7 @@ import authReducer from "../features/auth/auth-slice";
 import cartReducer from "../features/cart/cart-slice";
 import wishlistReducer from "../features/wishlist/wishlist-slice";
 import medallionReducer from "../features/medallion/medallion-slice";
+import checkoutReducer from "../features/checkout/checkout-slice";
 
 import {CONSTANTS} from "../../utils/constants";
 
@@ -21,7 +22,8 @@ const store = configureStore({
         auth: authReducer,
         cart: cartReducer,
         wishlist: wishlistReducer,
-        medallion: medallionReducer
+        medallion: medallionReducer,
+        checkout: checkoutReducer
     },
     preloadedState: {
         ui: {themeVariant, activePath: '/', drawerOpen: false},

@@ -16,6 +16,7 @@ import NavLink from "../../shared/nav-link";
 import {selectAuth} from "../../../redux/features/auth/auth-slice";
 import {UTILS} from "../../../utils/utils";
 import {CART_ACTION_CREATORS, selectCart} from "../../../redux/features/cart/cart-slice";
+import {selectWishlist} from "../../../redux/features/wishlist/wishlist-slice";
 
 const AuthDesktopHeader = () => {
 
@@ -38,6 +39,7 @@ const AuthDesktopHeader = () => {
     }
 
     const {items} = useSelector(selectCart);
+    const {items: wishlists} = useSelector(selectWishlist);
 
     return (
         <Toolbar
@@ -98,8 +100,8 @@ const AuthDesktopHeader = () => {
                             />
                         </Link>
                     </Badge>
-                    <Badge color="secondary" badgeContent={999} variant="dot" max={10}>
-                        <Link to='/wishlist' style={{textDecoration: 'none'}}>
+                    <Badge color="secondary" badgeContent={wishlists.length} variant="standard" max={10}>
+                        <Link to='/wishlists' style={{textDecoration: 'none'}}>
                             <FavoriteBorderOutlined
                                 color="secondary"
                                 sx={{

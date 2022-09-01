@@ -33,7 +33,10 @@ const AuthCartPage = () => {
                 <Container>
                     <Grid container={true} spacing={4}>
                         <Grid item={true} xs={12} md={8}>
-                            <Grid container={true} justifyContent="space-between" spacing={2}>
+                            <Grid
+                                container={true}
+                                justifyContent="space-between"
+                                spacing={2}>
                                 <Grid item={true} xs={12} md="auto">
                                     <Typography variant="h4" sx={{color: 'text.primary'}}>
                                         Shopping Bag
@@ -60,6 +63,7 @@ const AuthCartPage = () => {
                             </Grid>
 
                             <Divider variant="fullWidth" sx={{my: 2}}/>
+
                             {items.length === 0 ? (
                                 <Box sx={{
                                     backgroundColor: 'background.paper',

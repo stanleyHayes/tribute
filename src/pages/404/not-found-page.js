@@ -23,7 +23,9 @@ const NotFoundPage = () => {
                             title="Page Not Found"
                         />
                     </Stack>
-                    <Typography align="center" mb={2} sx={{color: 'text.primary'}} variant="h2">404</Typography>
+                    <Typography align="center" mb={2} sx={{color: 'text.primary'}} variant="h2">
+                        404
+                    </Typography>
                     <Typography mb={2} sx={{color: 'text.primary'}} align="center" variant="h5">
                         Page not found
                     </Typography>
