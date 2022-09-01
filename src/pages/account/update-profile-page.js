@@ -1,4 +1,3 @@
-import Layout from "../../components/layout/layout";
 import {
     Alert,
     AlertTitle,
@@ -8,10 +7,14 @@ import {
     CircularProgress,
     Container,
     Divider,
-    FormControl, FormHelperText,
-    Grid, InputAdornment, InputLabel,
+    FormControl,
+    FormHelperText,
+    Grid,
+    InputAdornment,
+    InputLabel,
     LinearProgress,
-    MenuItem, OutlinedInput,
+    MenuItem,
+    OutlinedInput,
     Stack,
     TextField,
     Typography
@@ -24,6 +27,7 @@ import * as yup from "yup";
 import "yup-phone";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
 import {useState} from "react";
+import AuthLayout from "../../components/layout/auth-layout";
 
 const UpdateProfilePage = () => {
 
@@ -38,11 +42,10 @@ const UpdateProfilePage = () => {
             phone: authData.phone,
             address: {
                 country: authData?.address?.country,
-                region: authData?.address?.region,
+                stateOrProvinceOrRegion: authData?.address?.stateOrProvinceOrRegion,
                 city: authData?.address?.city,
-                street: authData?.address?.street,
-                gpAddressOrHouseNumber: authData?.address?.gpAddressOrHouseNumber,
-                landmark: authData?.address?.landmark
+                addressLine1: authData?.address?.addressLine1,
+                addressLine2: authData?.address?.addressLine2,
             }
         },
         validationSchema: yup.object({
@@ -53,11 +56,10 @@ const UpdateProfilePage = () => {
             phone: yup.string().phone("Enter a valid phone").required('Phone required'),
             address: yup.object().shape({
                 country: yup.string().oneOf(['Ghana', 'Other', '']).required('Country required'),
-                region: yup.string().required('Country required'),
-                city: yup.string().required('Country required'),
-                street: yup.string().required('Country required'),
-                gpAddressOrHouseNumber: yup.string().required('Country required'),
-                landmark: yup.string().required('Country required'),
+                stateOrProvinceOrRegion: yup.string().required('State or Region or Province required'),
+                city: yup.string().required('City required'),
+                addressLine1: yup.string().required('Address line required'),
+                addressLine2: yup.string()
             })
         }),
         onSubmit: (values, formikHelpers) => {
@@ -102,7 +104,7 @@ const UpdateProfilePage = () => {
     });
 
     return (
-        <Layout>
+        <AuthLayout>
             {authLoading && <LinearProgress variant="query" color="secondary"/>}
             <Box sx={{py: 8}}>
                 <Container>
@@ -118,24 +120,26 @@ const UpdateProfilePage = () => {
                             <Grid item={true} xs={12} md={6}>
                                 <Card
                                     sx={{
-                                        borderTopRightRadius: 32,
                                         borderBottomRightRadius: 0,
-                                        borderBottomLeftRadius: 32,
-                                        borderTopLeftRadius: 32
+                                        borderTopRightRadius: 16,
+                                        borderBottomLeftRadius: 16,
+                                        borderTopLeftRadius: 0,
+                                        height: '100%'
                                     }} elevation={1}>
                                     <CardContent>
                                         <form onSubmit={formik.handleSubmit}>
                                             <Stack direction="column" spacing={2}>
-                                                <Typography variant="h5" sx={{color: 'text.primary'}}>Change
-                                                    Profile</Typography>
+                                                <Typography variant="h5" sx={{color: 'text.primary'}}>
+                                                    Change Profile
+                                                </Typography>
                                                 <Divider variant="fullWidth" sx={{my: 3}} light={true}/>
                                                 <FormControl variant="outlined" fullWidth={true}>
                                                     <TextField
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         InputLabelProps={{shrink: true}}
                                                         size="medium"
@@ -156,10 +160,10 @@ const UpdateProfilePage = () => {
                                                 <FormControl variant="outlined" fullWidth={true}>
                                                     <TextField
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         InputLabelProps={{shrink: true}}
                                                         value={formik.values.lastName}
@@ -180,10 +184,10 @@ const UpdateProfilePage = () => {
                                                 <FormControl variant="outlined" fullWidth={true}>
                                                     <TextField
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         InputLabelProps={{shrink: true}}
                                                         value={formik.values.email}
@@ -204,10 +208,10 @@ const UpdateProfilePage = () => {
                                                 <FormControl variant="outlined" fullWidth={true}>
                                                     <TextField
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         InputLabelProps={{shrink: true}}
                                                         value={formik.values.phone}
@@ -228,10 +232,10 @@ const UpdateProfilePage = () => {
                                                 <FormControl variant="outlined" fullWidth={true}>
                                                     <TextField
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         InputLabelProps={{shrink: true}}
                                                         value={formik.values.username}
@@ -254,10 +258,10 @@ const UpdateProfilePage = () => {
                                                     size="large"
                                                     color="secondary"
                                                     sx={{
-                                                        borderTopRightRadius: 32,
                                                         borderBottomRightRadius: 0,
-                                                        borderBottomLeftRadius: 32,
-                                                        borderTopLeftRadius: 32,
+                                                        borderTopRightRadius: 16,
+                                                        borderBottomLeftRadius: 16,
+                                                        borderTopLeftRadius: 0,
                                                         textTransform: 'capitalize',
                                                         py: 1.2
                                                     }}
@@ -280,24 +284,25 @@ const UpdateProfilePage = () => {
                             <Grid item={true} xs={12} md={6}>
                                 <Card
                                     sx={{
-                                        borderTopRightRadius: 32,
                                         borderBottomRightRadius: 0,
-                                        borderBottomLeftRadius: 32,
-                                        borderTopLeftRadius: 32
+                                        borderTopRightRadius: 16,
+                                        borderBottomLeftRadius: 16,
+                                        borderTopLeftRadius: 0,
                                     }} elevation={1}>
                                     <CardContent>
                                         <form onSubmit={formik.handleSubmit}>
                                             <Stack direction="column" spacing={2}>
-                                                <Typography variant="h5" sx={{color: 'text.primary'}}>Change
-                                                    Address</Typography>
+                                                <Typography variant="h5" sx={{color: 'text.primary'}}>
+                                                    Change Address
+                                                </Typography>
                                                 <Divider variant="fullWidth" sx={{my: 3}} light={true}/>
                                                 <FormControl variant="outlined" fullWidth={true}>
                                                     <TextField
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         InputLabelProps={{shrink: true}}
                                                         label="Country"
@@ -323,38 +328,38 @@ const UpdateProfilePage = () => {
                                                 <FormControl variant="outlined" fullWidth={true}>
                                                     <TextField
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         InputLabelProps={{shrink: true}}
                                                         label="Region"
                                                         variant="outlined"
                                                         size="medium"
                                                         type='text'
-                                                        value={formik.values.address.region}
-                                                        name="address.region"
-                                                        id="street"
-                                                        error={Boolean(formik.touched?.address?.region && formik.errors?.address?.region)}
+                                                        value={formik.values.address?.stateOrProvinceOrRegion}
+                                                        name="address.stateOrProvinceOrRegion"
+                                                        id="stateOrProvinceOrRegion"
+                                                        error={Boolean(formik.touched?.address?.stateOrProvinceOrRegion && formik.errors?.address?.stateOrProvinceOrRegion)}
                                                         required={true}
                                                         onChange={formik.handleChange}
                                                         onBlur={formik.handleBlur}
-                                                        placeholder="Enter region"
-                                                        helperText={formik.touched?.address?.region && formik.errors?.address?.region}
+                                                        placeholder="Enter state Or Province Or Region"
+                                                        helperText={formik.touched?.address?.stateOrProvinceOrRegion && formik.errors?.address?.stateOrProvinceOrRegion}
                                                     />
                                                 </FormControl>
                                                 <FormControl variant="outlined" fullWidth={true}>
                                                     <TextField
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         InputLabelProps={{shrink: true}}
                                                         label="City"
-                                                        value={formik.values.address.city}
+                                                        value={formik.values.address?.city}
                                                         variant="outlined"
                                                         size="medium"
                                                         type='text'
@@ -371,73 +376,51 @@ const UpdateProfilePage = () => {
                                                 <FormControl variant="outlined" fullWidth={true}>
                                                     <TextField
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         InputLabelProps={{shrink: true}}
-                                                        value={formik.values.address.street}
-                                                        label="Street"
+                                                        value={formik.values.address?.addressLine1}
+                                                        label="Address Line 1"
                                                         variant="outlined"
                                                         size="medium"
                                                         type='text'
-                                                        name="address.street"
-                                                        id="street"
-                                                        error={Boolean(formik.touched?.address?.street && formik.errors?.address?.street)}
+                                                        name="address.addressLine1"
+                                                        id="addressLine1"
+                                                        error={Boolean(formik.touched?.address?.addressLine1 && formik.errors?.address?.addressLine1)}
                                                         required={true}
                                                         onChange={formik.handleChange}
                                                         onBlur={formik.handleBlur}
-                                                        placeholder="Enter street"
-                                                        helperText={formik.touched?.address?.street && formik.errors?.address?.street}
+                                                        multiline={true}
+                                                        placeholder="Enter addressLine1"
+                                                        helperText={formik.touched?.address?.addressLine1 && formik.errors?.address?.addressLine1}
                                                     />
                                                 </FormControl>
                                                 <FormControl variant="outlined" fullWidth={true}>
                                                     <TextField
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         InputLabelProps={{shrink: true}}
-                                                        label="GP Address or House Number"
+                                                        label="Address line 2"
                                                         variant="outlined"
                                                         size="medium"
                                                         type='text'
-                                                        name="address.gpsAddressOrHouseNumber"
-                                                        id="gpsAddressOrHouseNumber"
-                                                        value={formik.values.address.gpAddressOrHouseNumber}
-                                                        error={Boolean(formik.touched?.address?.gpAddressOrHouseNumber && formik.errors?.address?.gpAddressOrHouseNumber)}
+                                                        name="address.addressLine2"
+                                                        id="addressLine2"
+                                                        value={formik.values.address?.addressLine2}
+                                                        error={Boolean(formik.touched?.address?.addressLine2 && formik.errors?.address?.addressLine2)}
                                                         required={true}
+                                                        multiline={true}
                                                         onChange={formik.handleChange}
                                                         onBlur={formik.handleBlur}
-                                                        placeholder="Enter Ghana Post Address or House Number"
-                                                        helperText={formik.touched?.address?.gpAddressOrHouseNumber && formik.errors?.address?.gpAddressOrHouseNumber}
-                                                    />
-                                                </FormControl>
-                                                <FormControl variant="outlined" fullWidth={true}>
-                                                    <TextField
-                                                        sx={{
-                                                            borderTopRightRadius: 32,
-                                                            borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
-                                                        }}
-                                                        InputLabelProps={{shrink: true}}
-                                                        label="Landmark"
-                                                        variant="outlined"
-                                                        size="medium"
-                                                        type='text'
-                                                        name="address.landmark"
-                                                        value={formik.values.address?.landmark}
-                                                        id="landmark"
-                                                        error={Boolean(formik.touched?.address?.landmark && formik.errors?.address?.landmark)}
-                                                        required={true}
-                                                        onChange={formik.handleChange}
-                                                        onBlur={formik.handleBlur}
-                                                        placeholder="Enter landmark"
-                                                        helperText={formik.touched?.address?.landmark && formik.errors?.address?.landmark}
+                                                        placeholder="Enter address line2"
+                                                        helperText={formik.touched?.address?.addressLine2 && formik.errors?.address?.addressLine2}
                                                     />
                                                 </FormControl>
 
@@ -445,10 +428,10 @@ const UpdateProfilePage = () => {
                                                     size="large"
                                                     color="secondary"
                                                     sx={{
-                                                        borderTopRightRadius: 32,
                                                         borderBottomRightRadius: 0,
-                                                        borderBottomLeftRadius: 32,
-                                                        borderTopLeftRadius: 32,
+                                                        borderTopRightRadius: 16,
+                                                        borderBottomLeftRadius: 16,
+                                                        borderTopLeftRadius: 0,
                                                         textTransform: 'capitalize',
                                                         py: 1.2
                                                     }}
@@ -471,10 +454,10 @@ const UpdateProfilePage = () => {
                             <Grid item={true} xs={12} md={6}>
                                 <Card
                                     sx={{
-                                        borderTopRightRadius: 32,
                                         borderBottomRightRadius: 0,
-                                        borderBottomLeftRadius: 32,
-                                        borderTopLeftRadius: 32
+                                        borderTopRightRadius: 16,
+                                        borderBottomLeftRadius: 16,
+                                        borderTopLeftRadius: 0,
                                     }} elevation={1}>
                                     <CardContent>
                                         <form onSubmit={changePasswordFormik.handleSubmit}>
@@ -486,10 +469,10 @@ const UpdateProfilePage = () => {
                                                     <InputLabel htmlFor="currentPassword">Current Password</InputLabel>
                                                     <OutlinedInput
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         size="medium"
                                                         type={showPassword ? 'text' : 'password'}
@@ -498,36 +481,36 @@ const UpdateProfilePage = () => {
                                                         error={Boolean(changePasswordFormik?.errors?.currentPassword)}
                                                         required={true}
                                                         onChange={formik.handleChange}
-                                                        onBlue={formik.handleBlur}
+                                                        onBlur={formik.handleBlur}
                                                         placeholder="Enter password"
                                                         endAdornment={
                                                             <InputAdornment position="end">
                                                                 {showPassword ?
                                                                     <VisibilityOff
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     /> :
                                                                     <Visibility
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     />}
@@ -544,10 +527,10 @@ const UpdateProfilePage = () => {
                                                     <InputLabel htmlFor="password">Password</InputLabel>
                                                     <OutlinedInput
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         size="medium"
                                                         type={showPassword ? 'text' : 'password'}
@@ -556,36 +539,36 @@ const UpdateProfilePage = () => {
                                                         error={Boolean(changePasswordFormik?.errors?.password)}
                                                         required={true}
                                                         onChange={changePasswordFormik.handleChange}
-                                                        onBlue={changePasswordFormik.handleBlur}
+                                                        onBlur={changePasswordFormik.handleBlur}
                                                         placeholder="Enter password"
                                                         endAdornment={
                                                             <InputAdornment position="end">
                                                                 {showPassword ?
                                                                     <VisibilityOff
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     /> :
                                                                     <Visibility
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     />}
@@ -602,10 +585,10 @@ const UpdateProfilePage = () => {
                                                     <InputLabel htmlFor="confirmPassword">Confirm Password</InputLabel>
                                                     <OutlinedInput
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         size="medium"
                                                         type={showPassword ? 'text' : 'password'}
@@ -614,7 +597,7 @@ const UpdateProfilePage = () => {
                                                         error={Boolean(changePasswordFormik?.errors?.confirmPassword)}
                                                         required={true}
                                                         onChange={changePasswordFormik.handleChange}
-                                                        onBlue={changePasswordFormik.handleBlur}
+                                                        onBlur={changePasswordFormik.handleBlur}
                                                         placeholder="Enter password"
                                                         endAdornment={
                                                             <InputAdornment position="end">
@@ -622,30 +605,30 @@ const UpdateProfilePage = () => {
                                                                     <VisibilityOff
                                                                         onClick={() => setShowPassword(!showPassword)}
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     /> :
                                                                     <Visibility
                                                                         onClick={() => setShowPassword(!showPassword)}
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     />}
@@ -662,10 +645,10 @@ const UpdateProfilePage = () => {
                                                     size="large"
                                                     color="secondary"
                                                     sx={{
-                                                        borderTopRightRadius: 32,
                                                         borderBottomRightRadius: 0,
-                                                        borderBottomLeftRadius: 32,
-                                                        borderTopLeftRadius: 32,
+                                                        borderTopRightRadius: 16,
+                                                        borderBottomLeftRadius: 16,
+                                                        borderTopLeftRadius: 0,
                                                         textTransform: 'capitalize',
                                                         py: 1.2
                                                     }}
@@ -688,10 +671,10 @@ const UpdateProfilePage = () => {
                             <Grid item={true} xs={12} md={6}>
                                 <Card
                                     sx={{
-                                        borderTopRightRadius: 32,
                                         borderBottomRightRadius: 0,
-                                        borderBottomLeftRadius: 32,
-                                        borderTopLeftRadius: 32
+                                        borderTopRightRadius: 16,
+                                        borderBottomLeftRadius: 16,
+                                        borderTopLeftRadius: 0,
                                     }} elevation={1}>
                                     <CardContent>
                                         <form onSubmit={changePinFormik.handleSubmit}>
@@ -703,10 +686,10 @@ const UpdateProfilePage = () => {
                                                     <InputLabel htmlFor="currentPin">Current Pin</InputLabel>
                                                     <OutlinedInput
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         size="medium"
                                                         type={showPin ? 'text' : 'password'}
@@ -715,7 +698,7 @@ const UpdateProfilePage = () => {
                                                         error={Boolean(changePinFormik?.errors?.currentPin)}
                                                         required={true}
                                                         onChange={changePinFormik.handleChange}
-                                                        onBlue={changePinFormik.handleBlur}
+                                                        onBlur={changePinFormik.handleBlur}
                                                         placeholder="Enter pin"
                                                         endAdornment={
                                                             <InputAdornment position="end">
@@ -723,30 +706,30 @@ const UpdateProfilePage = () => {
                                                                     <VisibilityOff
                                                                         onClick={() => setShowPin(false)}
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     /> :
                                                                     <Visibility
                                                                         onClick={() => setShowPin(true)}
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     />}
@@ -763,10 +746,10 @@ const UpdateProfilePage = () => {
                                                     <InputLabel htmlFor="pin">Pin</InputLabel>
                                                     <OutlinedInput
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         size="medium"
                                                         type={showPin ? 'text' : 'password'}
@@ -775,7 +758,7 @@ const UpdateProfilePage = () => {
                                                         error={Boolean(changePinFormik?.errors?.pin)}
                                                         required={true}
                                                         onChange={changePinFormik.handleChange}
-                                                        onBlue={changePinFormik.handleBlur}
+                                                        onBlur={changePinFormik.handleBlur}
                                                         placeholder="Enter pin"
                                                         endAdornment={
                                                             <InputAdornment position="end">
@@ -783,30 +766,30 @@ const UpdateProfilePage = () => {
                                                                     <VisibilityOff
                                                                         onClick={() => setShowPin(false)}
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     /> :
                                                                     <Visibility
                                                                         onClick={() => setShowPin(true)}
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     />}
@@ -823,10 +806,10 @@ const UpdateProfilePage = () => {
                                                     <InputLabel htmlFor="confirmPin">Confirm Pin</InputLabel>
                                                     <OutlinedInput
                                                         sx={{
-                                                            borderTopRightRadius: 32,
                                                             borderBottomRightRadius: 0,
-                                                            borderBottomLeftRadius: 32,
-                                                            borderTopLeftRadius: 32
+                                                            borderTopRightRadius: 16,
+                                                            borderBottomLeftRadius: 16,
+                                                            borderTopLeftRadius: 0,
                                                         }}
                                                         size="medium"
                                                         type={showPin ? 'text' : 'password'}
@@ -835,7 +818,7 @@ const UpdateProfilePage = () => {
                                                         error={Boolean(changePinFormik?.errors?.confirmPin)}
                                                         required={true}
                                                         onChange={changePinFormik.handleChange}
-                                                        onBlue={changePinFormik.handleBlur}
+                                                        onBlur={changePinFormik.handleBlur}
                                                         placeholder="Enter pin"
                                                         endAdornment={
                                                             <InputAdornment position="end">
@@ -843,30 +826,30 @@ const UpdateProfilePage = () => {
                                                                     <VisibilityOff
                                                                         onClick={() => setShowPin(false)}
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     /> :
                                                                     <Visibility
                                                                         onClick={() => setShowPassword(true)}
                                                                         sx={{
-                                                                            borderTopRightRadius: 32,
                                                                             borderBottomRightRadius: 0,
-                                                                            borderBottomLeftRadius: 32,
-                                                                            borderTopLeftRadius: 32,
+                                                                            borderTopRightRadius: 16,
+                                                                            borderBottomLeftRadius: 16,
+                                                                            borderTopLeftRadius: 0,
                                                                             cursor: 'pointer',
                                                                             color: 'secondary.main',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 32,
                                                                             backgroundColor: 'light.secondary'
                                                                         }}
                                                                     />}
@@ -883,10 +866,10 @@ const UpdateProfilePage = () => {
                                                     size="large"
                                                     color="secondary"
                                                     sx={{
-                                                        borderTopRightRadius: 32,
                                                         borderBottomRightRadius: 0,
-                                                        borderBottomLeftRadius: 32,
-                                                        borderTopLeftRadius: 32,
+                                                        borderTopRightRadius: 16,
+                                                        borderBottomLeftRadius: 16,
+                                                        borderTopLeftRadius: 0,
                                                         textTransform: 'capitalize',
                                                         py: 1.2
                                                     }}
@@ -910,7 +893,7 @@ const UpdateProfilePage = () => {
                     </Box>
                 </Container>
             </Box>
-        </Layout>
+        </AuthLayout>
     )
 }
 

@@ -27,7 +27,7 @@ const ProfilePage = () => {
     return (
         <AuthLayout>
             <Container>
-                <Box sx={{py: 8}}>
+                <Box sx={{py: 4}}>
                     <Grid container={true} spacing={2}>
                         <Grid item={true} xs={12} md={4}>
                             <Stack direction="column" spacing={2}>
