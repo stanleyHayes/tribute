@@ -23,7 +23,6 @@ import VerifyAccountPage from "./pages/authentication/verify-account-page";
 import VerifyLoginOtpPage from "./pages/authentication/verify-login-otp-page";
 import WelcomePage from "./pages/authentication/welcome-page";
 import StoriesAuthPage from "./pages/stories/stories-auth-page";
-import ProfilePage from "./pages/profile/profile-page";
 import UpdateProfilePage from "./pages/account/update-profile-page";
 import SettingsPage from "./pages/account/settings-page";
 import ChangePasswordPage from "./pages/account/change-password-page";
@@ -38,6 +37,7 @@ import MedallionDetailPage from "./pages/medalions/medallion-detail-page";
 import AuthCartPage from "./pages/cart/auth-cart-page";
 import WishlistsPage from "./pages/wishlists/wishlists-page";
 import OrderDetailPage from "./pages/orders/order-detail-page";
+import ProfilePage from "./pages/account/profile-page";
 
 function App() {
     const {themeVariant} = useSelector(selectUI);

@@ -35,7 +35,17 @@ const store = configureStore({
                 lastName: 'Lopez',
                 username: 'inigo.lopez',
                 email: 'inigo.lopez@societyofjesus.org',
-                fullName: 'Inigo Lopez'
+                fullName: 'Inigo Lopez',
+                phone: '+233270048319',
+                status: 'Active',
+                address: {
+                    country: 'Ghana',
+                    stateOrProvinceOrRegion: 'Greater Accra',
+                    city: 'Accra',
+                    zipCode: '00233',
+                    addressLine1: 'Atakorah Estates 2',
+                    addressLine2: 'Ashogman Estates'
+                }
             }
         }
     }
