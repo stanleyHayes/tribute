@@ -1,5 +1,5 @@
 import AuthLayout from "../../components/layout/auth-layout";
-import {Box, Container, Step, StepContent, StepIcon, StepLabel, Stepper} from "@mui/material";
+import {Box, Container, Step, StepIcon, StepLabel, Stepper} from "@mui/material";
 import CheckoutShipping from "../../components/shared/checkout-shipping";
 import CheckoutSummary from "../../components/shared/checkout-summary";
 import CheckoutPayment from "../../components/shared/checkout-payment";
@@ -44,8 +44,8 @@ const CheckoutPage = () => {
                                     completed={activeStep > step.stage}
                                     active={activeStep === step.stage}
                                     key={step.stage}>
-                                        <StepLabel>{step.label}</StepLabel>
-                                        <StepIcon icon={step.icon}/>
+                                    <StepLabel>{step.label}</StepLabel>
+                                    <StepIcon icon={step.icon}/>
                                 </Step>
                             )
                         })}

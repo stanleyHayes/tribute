@@ -77,6 +77,7 @@ const calculateTotalPrice = items => {
         return accumulator + (price * cartItem.quantity);
     }, 0);
 }
+
 export const CART_ACTION_CREATORS = {
     addItem: cartSlice.actions.addItem,
     removeItem: cartSlice.actions.removeItem,

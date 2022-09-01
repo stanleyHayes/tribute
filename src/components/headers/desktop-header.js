@@ -47,10 +47,10 @@ const DesktopHeader = () => {
                             variant="text"
                             endIcon={menuOpen ? <KeyboardArrowDown/> : <KeyboardArrowUp/>}
                             sx={{
-                                borderBottomRightRadius: 4,
-                                borderTopRightRadius: 8,
-                                borderBottomLeftRadius: 8,
-                                borderTopLeftRadius: 4,
+                                borderBottomRightRadius: 0,
+                                borderTopRightRadius: 12,
+                                borderBottomLeftRadius: 12,
+                                borderTopLeftRadius: 0,
                                 color: pathname.includes('medallion') ? 'text.active' : 'text.inactive',
                                 backgroundColor: pathname.includes('medallion') ? 'light.active' : false,
                                 textTransform: 'capitalize',
@@ -93,10 +93,10 @@ const DesktopHeader = () => {
                                 sx={{
                                     borderWidth: 2,
                                     backgroundColor: 'light.active',
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4,
+                                    borderTopLeftRadius: 0,
                                     textTransform: 'capitalize',
                                     borderColor: 'text.active',
                                     color: 'text.active'
@@ -111,10 +111,10 @@ const DesktopHeader = () => {
                                 size="small"
                                 disableElevation={true}
                                 sx={{
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4,
+                                    borderTopLeftRadius: 0,
                                     textTransform: 'capitalize',
                                 }}>
                                 Register
@@ -125,10 +125,10 @@ const DesktopHeader = () => {
                                 color="secondary"
                                 sx={{
                                     backgroundColor: 'light.active',
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4,
+                                    borderTopLeftRadius: 0,
                                     padding: 0.4,
                                     fontSize: 32,
                                     color: 'white'
@@ -139,10 +139,10 @@ const DesktopHeader = () => {
                             <DarkMode
                                 sx={{
                                     backgroundColor: 'light.active',
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4,
+                                    borderTopLeftRadius: 0,
                                     padding: 0.4,
                                     fontSize: 32,
                                     cursor: 'pointer',

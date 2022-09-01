@@ -37,6 +37,7 @@ import ProductDetailPage from "./pages/medalions/product-detail-page";
 import MedallionDetailPage from "./pages/medalions/medallion-detail-page";
 import AuthCartPage from "./pages/cart/auth-cart-page";
 import WishlistsPage from "./pages/wishlists/wishlists-page";
+import OrderDetailPage from "./pages/orders/order-detail-page";
 
 function App() {
     const {themeVariant} = useSelector(selectUI);
@@ -55,6 +56,8 @@ function App() {
                 <Route element={<ProfilePage/>} path="/profile"/>
                 <Route element={<AuthCartPage/>} path="/cart"/>
                 <Route element={<CartPage/>} path="/cart"/>
+                <Route element={<OrdersPage/>} path="/orders"/>
+                <Route element={<OrderDetailPage/>} path="/orders/:orderID"/>
                 <Route element={<UpdateProfilePage/>} path="/update-profile"/>
                 <Route element={<SettingsPage/>} path="/settings"/>
                 <Route element={<DashboardPage/>} path="/dashboard"/>
