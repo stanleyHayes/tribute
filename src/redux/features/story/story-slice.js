@@ -1,5 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {STORY_API} from "../../../api/story";
+import {stories} from "./stories-data";
 
 
 const getStories = createAsyncThunk(
@@ -19,13 +20,29 @@ const getStories = createAsyncThunk(
         }
     });
 
+
+const getStory = createAsyncThunk(
+    'stories/getStory',
+    async ({id, showMessage}, {rejectWithValue}) => {
+        try {
+            const response = await STORY_API.getStory(id);
+            showMessage(response.data.message, {variant: 'success'});
+            return response.data;
+        } catch (e) {
+            const {message} = e.response.data;
+            showMessage(message, {variant: 'error'});
+            return rejectWithValue(message);
+        }
+    });
+
 const storySlice = createSlice({
     name: 'stories',
     initialState: {
         storyLoading: false,
         storyMessage: null,
         storyError: null,
-        stories: []
+        stories: [...stories],
+        story: stories[0]
     },
     reducers: {},
     extraReducers: builder => {
@@ -49,6 +66,6 @@ const storySlice = createSlice({
 
 export const selectStory = state => state.story;
 
-export const STORY_ACTION_CREATORS = {getStories};
+export const STORY_ACTION_CREATORS = {getStories, getStory};
 
 export default storySlice.reducer;

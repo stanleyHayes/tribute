@@ -38,6 +38,8 @@ import AuthCartPage from "./pages/cart/auth-cart-page";
 import WishlistsPage from "./pages/wishlists/wishlists-page";
 import OrderDetailPage from "./pages/orders/order-detail-page";
 import ProfilePage from "./pages/account/profile-page";
+import StoryDetailAuthPage from "./pages/stories/story-detail-auth-page";
+import StoryDetailPage from "./pages/stories/story-detail-page";
 
 function App() {
     const {themeVariant} = useSelector(selectUI);
@@ -52,7 +54,9 @@ function App() {
                 <Route element={<FeaturesPage/>} path="/features"/>
                 <Route element={<HelpPage/>} path="/help-center"/>
                 <Route element={<StoriesPage/>} path="/our-stories"/>
+                <Route element={<StoryDetailPage/>} path="/our-stories/:storyID"/>
                 <Route element={<StoriesAuthPage/>} path="/stories"/>
+                <Route element={<StoryDetailAuthPage/>} path="/stories/:storyID"/>
                 <Route element={<ProfilePage/>} path="/profile"/>
                 <Route element={<AuthCartPage/>} path="/cart"/>
                 <Route element={<CartPage/>} path="/cart"/>

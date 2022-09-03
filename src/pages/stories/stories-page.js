@@ -1,9 +1,16 @@
 import Layout from "../../components/layout/layout";
-import {Box, Container, Stack, Typography} from "@mui/material";
+import {Alert, AlertTitle, Box, Container, Grid, LinearProgress, Stack, Typography} from "@mui/material";
 import banner from "../../assets/images/banners/medallion-features.jpg";
 import Banner from "../../components/shared/banner";
+import {useSelector} from "react-redux";
+import {selectStory} from "../../redux/features/story/story-slice";
+import Story from "../../components/shared/story";
+import React from "react";
 
 const StoriesPage = () => {
+
+    const {storyLoading, storyError, stories} = useSelector(selectStory);
+
     return (
         <Layout>
             <Banner
@@ -27,11 +34,40 @@ const StoriesPage = () => {
                 links={[{label: 'Home', link: '/'}, {label: 'About', link: '/about'}]}
                 backgroundImage={banner}
             />
-            <Container>
-                <Typography variant="h3" align="center" sx={{color: 'text.secondary'}}>
-                    Page under construction
-                </Typography>
-            </Container>
+            {storyLoading && <LinearProgress variant="query" color="secondary"/>}
+            <Box sx={{py: 4}}>
+                <Container>
+                    {storyError && (
+                        <Alert severity="error"><AlertTitle>{storyError}</AlertTitle></Alert>
+                    )}
+                    {stories && stories.length === 0 ? (
+                        <Box sx={{
+                            minHeight: '30vh',
+                            borderRadius: 0.5,
+                            backgroundColor: 'background.paper',
+                            alignItems: 'center',
+                            display: 'flex',
+                            justifyContent: 'center'
+                        }}>
+                            <Typography
+                                variant="body1"
+                                align="center" sx={{textTransform: 'uppercase', color: 'text.primary'}}>
+                                No stories available
+                            </Typography>
+                        </Box>
+                    ) : (
+                        <Grid container={true} spacing={4}>
+                            {stories && stories.map(story => {
+                                return (
+                                    <Grid item={true} xs={12} md={6} lg={4} key={story._id}>
+                                        <Story story={story}/>
+                                    </Grid>
+                                )
+                            })}
+                        </Grid>
+                    )}
+                </Container>
+            </Box>
         </Layout>
     )
 }

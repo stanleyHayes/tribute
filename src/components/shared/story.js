@@ -1,15 +1,16 @@
 import {Button, Card, CardContent, CardMedia, Link, Stack, Typography} from "@mui/material";
 import {ArrowRightAlt} from "@mui/icons-material";
+import defaultImage from "./../../assets/images/default.png";
 
 const Story = ({story}) => {
     return (
         <Card
             sx={{
                 padding: 4,
-                borderBottomRightRadius: 4,
+                borderBottomRightRadius: 0,
                 borderTopRightRadius: 32,
                 borderBottomLeftRadius: 32,
-                borderTopLeftRadius: 4,
+                borderTopLeftRadius: 0,
                 position: 'relative',
                 borderBottomWidth: 5,
                 borderBottomColor: 'colors.red',
@@ -19,7 +20,7 @@ const Story = ({story}) => {
                 <Stack direction="row" justifyContent="center" spacing={2}>
                     <CardMedia
                         className="media"
-                        src={story.image}
+                        src={story.image ? story.image: defaultImage}
                         sx={{
                             height: 100,
                             width: 100,
@@ -31,9 +32,9 @@ const Story = ({story}) => {
                 </Stack>
                 <Stack direction="column" spacing={2}>
                     <Typography variant="h6" sx={{color: 'text.primary'}} align="center">
-                        {story.name}
+                        {story.user.name}
                     </Typography>
-                    <Link to={story.link} style={{textDecoration: 'none'}}>
+                    <Link to={`/stories/${story._id}`} style={{textDecoration: 'none'}}>
                         <Button
                             variant="contained"
                             color="secondary"
