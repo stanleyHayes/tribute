@@ -591,7 +591,7 @@ const RegisterPage = () => {
                                         borderBottomLeftRadius: 12,
                                         borderTopLeftRadius: 4,
                                     }}
-                                    fullWidth={false}
+                                    fullWidth={true}
                                     loadingPosition="start"
                                     startIcon={authLoading ?
                                         <CircularProgress color="secondary"/> : null}
