@@ -23,20 +23,20 @@ const Medallion = ({medallion}) => {
             variant="elevation"
             sx={{
                 backgroundColor: 'background.paper',
-                borderBottomRightRadius: 2,
+                borderBottomRightRadius: 0,
                 borderTopRightRadius: 32,
                 borderBottomLeftRadius: 32,
-                borderTopLeftRadius: 2,
+                borderTopLeftRadius: 0,
             }}>
             <CardContent>
                 <Box sx={{position: 'relative', height: 200, mb: 2}}>
                     <CardMedia
                         src={medallion.image}
                         sx={{
-                            borderBottomRightRadius: 2,
+                            borderBottomRightRadius: 0,
                             borderTopRightRadius: 32,
                             borderBottomLeftRadius: 32,
-                            borderTopLeftRadius: 2,
+                            borderTopLeftRadius: 0,
                             objectPosition: 'center',
                             objectFit: 'cover',
                             height: 200,
@@ -55,10 +55,10 @@ const Medallion = ({medallion}) => {
                             sx={{
                                 backgroundColor: 'secondary.main',
                                 position: 'absolute', top: 0, right: 0,
-                                borderBottomRightRadius: 4,
+                                borderBottomRightRadius: 0,
                                 borderTopRightRadius: 12,
                                 borderBottomLeftRadius: 12,
-                                borderTopLeftRadius: 4,
+                                borderTopLeftRadius: 0,
                             }}
                             variant="outlined"
                             size="small"

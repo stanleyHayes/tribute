@@ -7,7 +7,7 @@ const Header = () => {
     const [appBarColor, setAppBarColor] = useState('transparent');
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            if (window.scrollY >= window.innerHeight) {
+            if (window.scrollY >= window.innerHeight - 1) {
                 setAppBarColor('background.appBar');
             }else{
                 setAppBarColor('transparent');

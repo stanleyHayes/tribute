@@ -121,10 +121,10 @@ const HomePage = () => {
                                                 backgroundColor: 'light.secondary',
                                                 padding: 1,
                                                 fontSize: 64,
-                                                borderBottomRightRadius: 4,
+                                                borderBottomRightRadius: 0,
                                                 borderTopRightRadius: 12,
                                                 borderBottomLeftRadius: 12,
-                                                borderTopLeftRadius: 4
+                                                borderTopLeftRadius: 0
                                             }}/>
                                     </Stack>
                                 </Box>
@@ -261,10 +261,10 @@ const HomePage = () => {
                                             endIcon={<ArrowRightAlt/>}
                                             sx={{
                                                 textTransform: 'capitalize',
-                                                borderBottomRightRadius: 4,
+                                                borderBottomRightRadius: 0,
                                                 borderTopRightRadius: 12,
                                                 borderBottomLeftRadius: 12,
-                                                borderTopLeftRadius: 4
+                                                borderTopLeftRadius: 0
                                             }}>
                                             Features of Tribute
                                         </Button>
@@ -301,10 +301,10 @@ const HomePage = () => {
                                     component="img"
                                     src={banner}
                                     sx={{
-                                        borderBottomRightRadius: 4,
+                                        borderBottomRightRadius: 0,
                                         borderTopRightRadius: 32,
                                         borderBottomLeftRadius: 32,
-                                        borderTopLeftRadius: 4,
+                                        borderTopLeftRadius: 0,
                                         height: '100%',
                                         width: '100%',
                                         objectFit: 'cover',
@@ -331,10 +331,10 @@ const HomePage = () => {
                                             endIcon={<ArrowRightAlt/>}
                                             sx={{
                                                 textTransform: 'capitalize',
-                                                borderBottomRightRadius: 4,
+                                                borderBottomRightRadius: 0,
                                                 borderTopRightRadius: 12,
                                                 borderBottomLeftRadius: 12,
-                                                borderTopLeftRadius: 4
+                                                borderTopLeftRadius: 0
                                             }}>
                                             About Medallions
                                         </Button>
@@ -374,10 +374,10 @@ const HomePage = () => {
                                         endIcon={<ArrowRightAlt/>}
                                         sx={{
                                             textTransform: 'capitalize',
-                                            borderBottomRightRadius: 4,
+                                            borderBottomRightRadius: 0,
                                             borderTopRightRadius: 12,
                                             borderBottomLeftRadius: 12,
-                                            borderTopLeftRadius: 4
+                                            borderTopLeftRadius: 0
                                         }}>
                                         Create a Free Account
                                     </Button>
@@ -406,10 +406,10 @@ const HomePage = () => {
                                     component="img"
                                     src={banner}
                                     sx={{
-                                        borderBottomRightRadius: 4,
+                                        borderBottomRightRadius: 0,
                                         borderTopRightRadius: 32,
                                         borderBottomLeftRadius: 32,
-                                        borderTopLeftRadius: 4,
+                                        borderTopLeftRadius: 0,
                                         height: '100%',
                                         width: '100%',
                                         objectFit: 'cover',
@@ -458,10 +458,10 @@ const HomePage = () => {
                                             endIcon={<ArrowRightAlt/>}
                                             sx={{
                                                 textTransform: 'capitalize',
-                                                borderBottomRightRadius: 4,
+                                                borderBottomRightRadius: 0,
                                                 borderTopRightRadius: 12,
                                                 borderBottomLeftRadius: 12,
-                                                borderTopLeftRadius: 4
+                                                borderTopLeftRadius: 0
                                             }}>
                                             About Us
                                         </Button>
@@ -504,10 +504,10 @@ const HomePage = () => {
                                             endIcon={<ArrowRightAlt/>}
                                             sx={{
                                                 textTransform: 'capitalize',
-                                                borderBottomRightRadius: 4,
+                                                borderBottomRightRadius: 0,
                                                 borderTopRightRadius: 12,
                                                 borderBottomLeftRadius: 12,
-                                                borderTopLeftRadius: 4
+                                                borderTopLeftRadius: 0
                                             }}>
                                             About Privacy
                                         </Button>
@@ -519,10 +519,10 @@ const HomePage = () => {
                                     component="img"
                                     src={banner}
                                     sx={{
-                                        borderBottomRightRadius: 4,
+                                        borderBottomRightRadius: 0,
                                         borderTopRightRadius: 32,
                                         borderBottomLeftRadius: 32,
-                                        borderTopLeftRadius: 4,
+                                        borderTopLeftRadius: 0,
                                         height: '100%',
                                         width: '100%',
                                         objectFit: 'cover',

@@ -7,10 +7,10 @@ const Help = ({help}) => {
             <Card
                 sx={{
                     padding: 4,
-                    borderBottomRightRadius: 4,
+                    borderBottomRightRadius: 0,
                     borderTopRightRadius: 32,
                     borderBottomLeftRadius: 32,
-                    borderTopLeftRadius: 4,
+                    borderTopLeftRadius: 0,
                 }}>
                 <CardMedia
                     className="media"

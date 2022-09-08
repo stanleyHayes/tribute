@@ -1,13 +1,29 @@
-import {Accordion, AccordionDetails, AccordionSummary, Typography} from "@mui/material";
+import {Accordion, AccordionDetails, AccordionSummary, Paper, Typography} from "@mui/material";
 import {ArrowRightAlt} from "@mui/icons-material";
 
 const FAQ = ({faq}) => {
     return (
         <Accordion
-            sx={{width: '100%', backgroundColor: 'background.default', padding: 0}}
+            component={Paper}
+            sx={{
+                borderBottomRightRadius: 0,
+                borderTopRightRadius: 32,
+                borderBottomLeftRadius: 32,
+                borderTopLeftRadius: 0,
+                width: '100%',
+                backgroundColor: 'background.default',
+                padding: 0
+            }}
             variant="elevation"
             elevation={0}>
-            <AccordionSummary expandIcon={<ArrowRightAlt />}>
+            <AccordionSummary
+                sx={{
+                    borderBottomRightRadius: 0,
+                    borderTopRightRadius: 32,
+                    borderBottomLeftRadius: 32,
+                    borderTopLeftRadius: 0,
+                }}
+                expandIcon={<ArrowRightAlt/>}>
                 <Typography variant="body2" sx={{color: 'text.primary'}}>
                     {faq.question}
                 </Typography>

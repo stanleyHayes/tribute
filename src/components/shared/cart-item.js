@@ -24,9 +24,9 @@ const CartItem = ({cartItem}) => {
         <Card
             sx={{
                 borderBottomRightRadius: 0,
-                borderTopRightRadius: 0,
-                borderBottomLeftRadius: 8,
-                borderTopLeftRadius: 4
+                borderTopRightRadius: 12,
+                borderBottomLeftRadius: 12,
+                borderTopLeftRadius: 0,
             }} elevation={0}>
             <Grid container={true} spacing={2}>
                 <Grid item={true} xs={12} md={3}>

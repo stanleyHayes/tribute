@@ -8,10 +8,10 @@ const Leader = ({leader}) => {
             elevation={0}
             variant="outlined"
             sx={{
-                borderBottomRightRadius: 4,
+                borderBottomRightRadius: 0,
                 borderTopRightRadius: 32,
                 borderBottomLeftRadius: 32,
-                borderTopLeftRadius: 4,
+                borderTopLeftRadius: 0,
                 height: '100%',
                 position: 'relative',
                 '&:hover': {

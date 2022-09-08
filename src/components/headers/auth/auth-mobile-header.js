@@ -45,10 +45,10 @@ const AuthMobileHeader = () => {
                     <MUIIcon
                         sx={{
                             backgroundColor: 'light.secondary',
-                            borderBottomRightRadius: 4,
-                            borderTopRightRadius: 8,
-                            borderBottomLeftRadius: 8,
-                            borderTopLeftRadius: 4,
+                            borderBottomRightRadius: 0,
+                            borderTopRightRadius: 12,
+                            borderBottomLeftRadius: 12,
+                            borderTopLeftRadius: 0,
                             padding: 0.4,
                             fontSize: 32,
                             cursor: 'pointer',
@@ -64,10 +64,10 @@ const AuthMobileHeader = () => {
                                 color="secondary"
                                 sx={{
                                     backgroundColor: 'light.secondary',
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4,
+                                    borderTopLeftRadius: 0,
                                     padding: 0.4,
                                     fontSize: 32,
                                     color: 'secondary.main',
@@ -95,10 +95,10 @@ const AuthMobileHeader = () => {
                         <DarkMode
                             sx={{
                                 backgroundColor: 'light.secondary',
-                                borderBottomRightRadius: 4,
-                                borderTopRightRadius: 8,
-                                borderBottomLeftRadius: 8,
-                                borderTopLeftRadius: 4,
+                                borderBottomRightRadius: 0,
+                                borderTopRightRadius: 12,
+                                borderBottomLeftRadius: 12,
+                                borderTopLeftRadius: 0,
                                 padding: 0.4,
                                 fontSize: 32,
                                 color: 'secondary.main'

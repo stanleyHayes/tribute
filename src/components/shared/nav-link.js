@@ -16,10 +16,10 @@ const NavLink = ({path, label, active}) => {
                 size="large"
                 variant="text"
                 sx={{
-                    borderBottomRightRadius: 4,
+                    borderBottomRightRadius: 0,
                     borderTopRightRadius: 12,
                     borderBottomLeftRadius: 12,
-                    borderTopLeftRadius: 4,
+                    borderTopLeftRadius: 0,
                     color: active ? 'text.active' : 'text.inactive',
                     backgroundColor: active ? 'light.active' : false,
                     textTransform: 'capitalize',

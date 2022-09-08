@@ -11,8 +11,8 @@ const OrderItem = ({order}) => {
         <Card
             sx={{
                 borderBottomRightRadius: 0,
-                borderTopRightRadius: 16,
-                borderBottomLeftRadius: 16,
+                borderTopRightRadius: 12,
+                borderBottomLeftRadius: 12,
                 borderTopLeftRadius: 0,
             }} elevation={0}>
             <Grid container={true} spacing={2}>
@@ -26,8 +26,8 @@ const OrderItem = ({order}) => {
                             objectFit: 'cover',
                             objectPosition: 'center',
                             borderBottomRightRadius: 0,
-                            borderTopRightRadius: 16,
-                            borderBottomLeftRadius: 16,
+                            borderTopRightRadius: 12,
+                            borderBottomLeftRadius: 12,
                             borderTopLeftRadius: 0,
                         }}
                     />
@@ -68,8 +68,8 @@ const OrderItem = ({order}) => {
                                     sx={{
                                         textTransform: 'capitalize',
                                         borderBottomRightRadius: 0,
-                                        borderTopRightRadius: 16,
-                                        borderBottomLeftRadius: 16,
+                                        borderTopRightRadius: 12,
+                                        borderBottomLeftRadius: 12,
                                         borderTopLeftRadius: 0,
                                     }}
                                     size="small">

@@ -47,10 +47,10 @@ const MobileSidebar = () => {
                         sx={{
                             cursor: 'pointer',
                             color: 'secondary.main',
-                            borderBottomRightRadius: 4,
-                            borderTopRightRadius: 16,
-                            borderBottomLeftRadius: 16,
-                            borderTopLeftRadius: 4,
+                            borderBottomRightRadius: 0,
+                            borderTopRightRadius: 12,
+                            borderBottomLeftRadius: 12,
+                            borderTopLeftRadius: 0,
                             padding: 1,
                             fontSize: 32,
                             backgroundColor: 'light.secondary'
@@ -61,10 +61,10 @@ const MobileSidebar = () => {
                         sx={{
                             cursor: 'pointer',
                             color: 'secondary.main',
-                            borderBottomRightRadius: 4,
-                            borderTopRightRadius: 16,
-                            borderBottomLeftRadius: 16,
-                            borderTopLeftRadius: 4,
+                            borderBottomRightRadius: 0,
+                            borderTopRightRadius: 12,
+                            borderBottomLeftRadius: 12,
+                            borderTopLeftRadius: 0,
                             padding: 1,
                             fontSize: 32,
                             backgroundColor: 'light.secondary'

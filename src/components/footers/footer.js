@@ -22,9 +22,9 @@ const Footer = () => {
                                 <Button
                                     sx={{
                                         textTransform: 'capitalize',
-                                        borderTopRightRadius: 16,
+                                        borderTopRightRadius: 12,
                                         borderBottomRightRadius: 0,
-                                        borderBottomLeftRadius: 16,
+                                        borderBottomLeftRadius: 12,
                                         borderTopLeftRadius: 0,
                                     }}
                                     variant="contained"
@@ -43,9 +43,9 @@ const Footer = () => {
                                     sx={{
                                         textTransform: 'capitalize',
                                         backgroundColor: 'light.secondary',
-                                        borderTopRightRadius: 16,
+                                        borderTopRightRadius: 12,
                                         borderBottomRightRadius: 0,
-                                        borderBottomLeftRadius: 16,
+                                        borderBottomLeftRadius: 12,
                                         borderTopLeftRadius: 0,
                                         borderWidth: 2
                                     }}
@@ -71,10 +71,10 @@ const Footer = () => {
                                     backgroundColor: 'light.secondary',
                                     padding: 1,
                                     fontSize: 36,
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4
+                                    borderTopLeftRadius: 0
                                 }}/>
                         </Link>
 
@@ -85,10 +85,10 @@ const Footer = () => {
                                     backgroundColor: 'light.secondary',
                                     padding: 1,
                                     fontSize: 36,
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4
+                                    borderTopLeftRadius: 0
                                 }}/>
                         </Link>
 
@@ -99,10 +99,10 @@ const Footer = () => {
                                     backgroundColor: 'light.secondary',
                                     padding: 1,
                                     fontSize: 36,
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4
+                                    borderTopLeftRadius: 0
                                 }}/>
                         </Link>
 
@@ -113,10 +113,10 @@ const Footer = () => {
                                     backgroundColor: 'light.secondary',
                                     padding: 1,
                                     fontSize: 36,
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4
+                                    borderTopLeftRadius: 0
                                 }}/>
                         </Link>
                     </Stack>

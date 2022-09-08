@@ -61,10 +61,10 @@ const ContactForm = ({title, caption}) => {
                     variant="elevation"
                     elevation={0}
                     sx={{
-                        borderBottomRightRadius: 4,
+                        borderBottomRightRadius: 0,
                         borderTopRightRadius: 32,
                         borderBottomLeftRadius: 32,
-                        borderTopLeftRadius: 4,
+                        borderTopLeftRadius: 0,
                     }}>
                     {messageLoading && <LinearProgress variant="query" color="secondary"/>}
                     <CardContent>

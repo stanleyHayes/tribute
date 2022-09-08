@@ -87,7 +87,7 @@ const DesktopHeader = () => {
                     <Stack spacing={1} justifyContent="space-between" alignItems="center" direction="row">
                         <Link to='/auth/login' style={{textDecoration: 'none'}}>
                             <Button
-                                size="small"
+                                size="medium"
                                 variant="outlined"
                                 color="secondary"
                                 sx={{
@@ -108,7 +108,7 @@ const DesktopHeader = () => {
                             <Button
                                 variant="contained"
                                 color="secondary"
-                                size="small"
+                                size="medium"
                                 disableElevation={true}
                                 sx={{
                                     borderBottomRightRadius: 0,

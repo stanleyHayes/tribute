@@ -19,10 +19,10 @@ const SidebarNavLink = ({path, label, active, icon}) => {
             <Stack
                 sx={{
                     backgroundColor: active ? 'light.secondary' : false, padding: 0.5,
-                    borderBottomRightRadius: 4,
-                    borderTopRightRadius: 8,
-                    borderBottomLeftRadius: 8,
-                    borderTopLeftRadius: 4,
+                    borderBottomRightRadius: 0,
+                    borderTopRightRadius: 12,
+                    borderBottomLeftRadius: 12,
+                    borderTopLeftRadius: 0,
                     pl: 2
                 }}
                 direction="row" alignItems="center" spacing={2}>

@@ -25,15 +25,15 @@ const MobileHeader = () => {
                 <Stack spacing={1} justifyContent="space-between" alignItems="center" direction="row">
                     <Link to='/auth/login' style={{textDecoration: 'none'}}>
                         <Button
-                            size="small"
+                            size="medium"
                             variant="outlined"
                             sx={{
                                 borderWidth: 2,
                                 backgroundColor: 'light.active',
-                                borderBottomRightRadius: 4,
+                                borderBottomRightRadius: 0,
                                 borderTopRightRadius: 12,
                                 borderBottomLeftRadius: 12,
-                                borderTopLeftRadius: 4,
+                                borderTopLeftRadius: 0,
                                 textTransform: 'capitalize',
                                 color: 'text.active',
                                 borderColor: 'text.active'
@@ -45,13 +45,13 @@ const MobileHeader = () => {
                         <Button
                             variant="contained"
                             color="secondary"
-                            size="small"
+                            size="medium"
                             disableElevation={true}
                             sx={{
-                                borderBottomRightRadius: 4,
+                                borderBottomRightRadius: 0,
                                 borderTopRightRadius: 12,
                                 borderBottomLeftRadius: 12,
-                                borderTopLeftRadius: 4,
+                                borderTopLeftRadius: 0,
                                 textTransform: 'capitalize'
                             }}>
                             Register
@@ -60,10 +60,10 @@ const MobileHeader = () => {
                     <Menu
                         sx={{
                             backgroundColor: 'light.active',
-                            borderBottomRightRadius: 4,
-                            borderTopRightRadius: 8,
-                            borderBottomLeftRadius: 8,
-                            borderTopLeftRadius: 4,
+                            borderBottomRightRadius: 0,
+                            borderTopRightRadius: 12,
+                            borderBottomLeftRadius: 12,
+                            borderTopLeftRadius: 0,
                             padding: 0.4,
                             fontSize: 32,
                             cursor: 'pointer',
@@ -76,10 +76,10 @@ const MobileHeader = () => {
                         <LightMode
                             sx={{
                                 backgroundColor: 'light.active',
-                                borderBottomRightRadius: 4,
-                                borderTopRightRadius: 8,
-                                borderBottomLeftRadius: 8,
-                                borderTopLeftRadius: 4,
+                                borderBottomRightRadius: 0,
+                                borderTopRightRadius: 12,
+                                borderBottomLeftRadius: 12,
+                                borderTopLeftRadius: 0,
                                 padding: 0.4,
                                 fontSize: 32,
                                 cursor: 'pointer',
@@ -91,10 +91,10 @@ const MobileHeader = () => {
                         <DarkMode
                             sx={{
                                 backgroundColor: 'light.active',
-                                borderBottomRightRadius: 4,
-                                borderTopRightRadius: 8,
-                                borderBottomLeftRadius: 8,
-                                borderTopLeftRadius: 4,
+                                borderBottomRightRadius: 0,
+                                borderTopRightRadius: 12,
+                                borderBottomLeftRadius: 12,
+                                borderTopLeftRadius: 0,
                                 padding: 0.4,
                                 fontSize: 32,
                                 color: 'white'

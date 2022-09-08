@@ -6,7 +6,7 @@ const Story = ({story}) => {
     return (
         <Card
             sx={{
-                padding: 4,
+                padding: 2,
                 borderBottomRightRadius: 0,
                 borderTopRightRadius: 32,
                 borderBottomLeftRadius: 32,
@@ -14,7 +14,8 @@ const Story = ({story}) => {
                 position: 'relative',
                 borderBottomWidth: 5,
                 borderBottomColor: 'colors.red',
-                borderBottomStyle: 'solid'
+                borderBottomStyle: 'solid',
+                height: '100%'
             }}>
             <CardContent>
                 <Stack direction="row" justifyContent="center" spacing={2}>

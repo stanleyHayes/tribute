@@ -45,10 +45,10 @@ const SidebarLink = ({path, label, active, icon}) => {
                     sx={{
                         cursor: 'pointer',
                         color: active ? 'secondary.main': 'text.primary',
-                        borderBottomRightRadius: 4,
-                        borderTopRightRadius: 8,
-                        borderBottomLeftRadius: 8,
-                        borderTopLeftRadius: 4,
+                        borderBottomRightRadius: 0,
+                        borderTopRightRadius: 12,
+                        borderBottomLeftRadius: 12,
+                        borderTopLeftRadius: 0,
                         padding: 1,
                         fontSize: 32,
                     }}/>

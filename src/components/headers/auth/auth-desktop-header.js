@@ -54,10 +54,10 @@ const AuthDesktopHeader = () => {
                     <Button
                         startIcon={
                             <Avatar sx={{
-                                borderBottomRightRadius: 4,
-                                borderTopRightRadius: 8,
-                                borderBottomLeftRadius: 8,
-                                borderTopLeftRadius: 4,
+                                borderBottomRightRadius: 0,
+                                borderTopRightRadius: 12,
+                                borderBottomLeftRadius: 12,
+                                borderTopLeftRadius: 0,
                                 backgroundColor: 'light.secondary'
                             }}>
                                 <Typography
@@ -72,10 +72,10 @@ const AuthDesktopHeader = () => {
                         variant="text"
                         endIcon={menuOpen ? <KeyboardArrowDown/> : <KeyboardArrowUp/>}
                         sx={{
-                            borderBottomRightRadius: 4,
-                            borderTopRightRadius: 8,
-                            borderBottomLeftRadius: 8,
-                            borderTopLeftRadius: 4,
+                            borderBottomRightRadius: 0,
+                            borderTopRightRadius: 12,
+                            borderBottomLeftRadius: 12,
+                            borderTopLeftRadius: 0,
                             color: 'secondary.main',
                             textTransform: 'capitalize',
                         }}>
@@ -88,10 +88,10 @@ const AuthDesktopHeader = () => {
                                 color="secondary"
                                 sx={{
                                     backgroundColor: 'light.secondary',
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4,
+                                    borderTopLeftRadius: 0,
                                     padding: 0.4,
                                     fontSize: 28,
                                     color: 'secondary.main',
@@ -106,10 +106,10 @@ const AuthDesktopHeader = () => {
                                 color="secondary"
                                 sx={{
                                     backgroundColor: 'light.secondary',
-                                    borderBottomRightRadius: 4,
+                                    borderBottomRightRadius: 0,
                                     borderTopRightRadius: 12,
                                     borderBottomLeftRadius: 12,
-                                    borderTopLeftRadius: 4,
+                                    borderTopLeftRadius: 0,
                                     padding: 0.4,
                                     fontSize: 28,
                                     color: 'secondary.main',
@@ -123,10 +123,10 @@ const AuthDesktopHeader = () => {
                             color="secondary"
                             sx={{
                                 backgroundColor: 'light.secondary',
-                                borderBottomRightRadius: 4,
+                                borderBottomRightRadius: 0,
                                 borderTopRightRadius: 12,
                                 borderBottomLeftRadius: 12,
-                                borderTopLeftRadius: 4,
+                                borderTopLeftRadius: 0,
                                 padding: 0.4,
                                 fontSize: 32,
                                 cursor: 'pointer'
@@ -138,10 +138,10 @@ const AuthDesktopHeader = () => {
                             color="secondary"
                             sx={{
                                 backgroundColor: 'light.secondary',
-                                borderBottomRightRadius: 4,
+                                borderBottomRightRadius: 0,
                                 borderTopRightRadius: 12,
                                 borderBottomLeftRadius: 12,
-                                borderTopLeftRadius: 4,
+                                borderTopLeftRadius: 0,
                                 padding: 0.4,
                                 fontSize: 32,
                                 color: 'secondary.main',
@@ -153,10 +153,10 @@ const AuthDesktopHeader = () => {
                         <DarkMode
                             sx={{
                                 backgroundColor: 'light.secondary',
-                                borderBottomRightRadius: 4,
+                                borderBottomRightRadius: 0,
                                 borderTopRightRadius: 12,
                                 borderBottomLeftRadius: 12,
-                                borderTopLeftRadius: 4,
+                                borderTopLeftRadius: 0,
                                 padding: 0.4,
                                 fontSize: 32,
                                 cursor: 'pointer',
