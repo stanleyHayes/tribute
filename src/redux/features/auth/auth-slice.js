@@ -61,6 +61,9 @@ const getProfile = createAsyncThunk('auth/getProfile',
             const {message} = e.response.data;
             if(message === 'jwt expired'){
                 navigate('/auth/login');
+                localStorage.removeItem(CONSTANTS.TRIBUTE_AUTH_TOKEN);
+                localStorage.removeItem(CONSTANTS.TRIBUTE_AUTH_DATA);
+
             }
             return rejectWithValue(message);
         }
@@ -87,7 +90,7 @@ const verifyOTP = createAsyncThunk('auth/verifyOTP',
             const response = await authAPI.verifyOTP(values, token);
             localStorage.setItem(CONSTANTS.TRIBUTE_AUTH_TOKEN, JSON.stringify(response.data.token));
             localStorage.setItem(CONSTANTS.TRIBUTE_AUTH_DATA, JSON.stringify(response.data.data));
-            navigate(`/`);
+            navigate(`/dashboard`);
             resetForm();
             showMessage(response.data.message, {variant: 'success'});
             return {data: response.data.data, token: response.data.token};

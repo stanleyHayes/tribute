@@ -199,7 +199,7 @@ const VerifyOtpPage = () => {
                                                                             backgroundColor: 'light.secondary',
                                                                             borderRadius: '100%',
                                                                             padding: 1,
-                                                                            fontSize: 24,
+                                                                            fontSize: 36,
                                                                         }}
                                                                     /> :
                                                                     <Visibility

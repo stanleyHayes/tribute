@@ -57,7 +57,7 @@ const RegisterPage = () => {
             username: '',
             gender: 'male',
             password: '',
-            phoneNumber: '',
+            phone: '',
             confirmPassword: '',
             email: ''
         },
@@ -78,7 +78,7 @@ const RegisterPage = () => {
             confirmPassword: yup.string()
                 .required('confirm password required')
                 .oneOf([yup.ref('password'), null], 'Passwords must match'),
-            phoneNumber: yup.string().phone('Enter valid phone number').required('Phone number required')
+            phone: yup.string().phone('Enter valid phone number').required('Phone number required')
         })
     });
 
@@ -386,9 +386,9 @@ const RegisterPage = () => {
                                             <FormControl fullWidth={true} variant="outlined">
                                                 <OutlinedInput
                                                     fullWidth={true}
-                                                    id="phoneNumber"
-                                                    value={formik.values.phoneNumber}
-                                                    name="phoneNumber"
+                                                    id="phone"
+                                                    value={formik.values.phone}
+                                                    name="phone"
                                                     endAdornment={
                                                         <InputAdornment
                                                             position="end">
@@ -402,7 +402,7 @@ const RegisterPage = () => {
                                                             />
                                                         </InputAdornment>
                                                     }
-                                                    error={formik.touched.phoneNumber && formik.errors.phoneNumber}
+                                                    error={formik.touched.phone && formik.errors.phone}
                                                     onChange={formik.handleChange}
                                                     onBlur={formik.handleBlur}
                                                     placeholder="Enter phone"
@@ -410,10 +410,10 @@ const RegisterPage = () => {
                                                     size="medium"
                                                     margin="dense"
                                                 />
-                                                {formik.touched.phoneNumber && formik.errors.phoneNumber && (
+                                                {formik.touched.phone && formik.errors.phone && (
                                                     <FormHelperText
                                                         error={true}>
-                                                        {formik.errors.phoneNumber}
+                                                        {formik.errors.phone}
                                                     </FormHelperText>
                                                 )}
                                             </FormControl>
@@ -586,10 +586,10 @@ const RegisterPage = () => {
                                     sx={{
                                         textTransform: 'capitalize',
                                         py: 1.2,
-                                        borderBottomRightRadius: 4,
+                                        borderBottomRightRadius: 0,
                                         borderTopRightRadius: 12,
                                         borderBottomLeftRadius: 12,
-                                        borderTopLeftRadius: 4,
+                                        borderTopLeftRadius: 0,
                                     }}
                                     fullWidth={true}
                                     loadingPosition="start"

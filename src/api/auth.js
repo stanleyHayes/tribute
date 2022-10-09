@@ -5,7 +5,7 @@ import {CONSTANTS} from "../utils/constants";
 const login = (user) => {
     return axios({
         method: 'POST',
-        url: `${CONSTANTS.SERVER_BASE_URL}/user/auth/login`,
+        url: `${CONSTANTS.SERVER_BASE_URL}/auth/login`,
         data: user
     });
 }
@@ -13,7 +13,7 @@ const login = (user) => {
 const register = (user) => {
     return axios({
         method: 'POST',
-        url: `${CONSTANTS.SERVER_BASE_URL}/user/auth/register`,
+        url: `${CONSTANTS.SERVER_BASE_URL}/auth/register`,
         data: user
     });
 }
@@ -21,7 +21,7 @@ const register = (user) => {
 const getProfile = token => {
     return axios({
         method: 'GET',
-        url: `${CONSTANTS.SERVER_BASE_URL}/user/auth/profile`,
+        url: `${CONSTANTS.SERVER_BASE_URL}/auth/profile`,
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -31,7 +31,7 @@ const getProfile = token => {
 const updateProfile = (token, data) => {
     return axios({
         method: 'PUT',
-        url: `${CONSTANTS.SERVER_BASE_URL}/user/auth/profile`,
+        url: `${CONSTANTS.SERVER_BASE_URL}/auth/profile`,
         headers: {
             Authorization: `Bearer ${token}`
         },
@@ -42,7 +42,7 @@ const updateProfile = (token, data) => {
 const verifyOTP = (otp, token) => {
     return axios({
         method: 'POST',
-        url: `${CONSTANTS.SERVER_BASE_URL}/user/auth/otp/${token}/verify`,
+        url: `${CONSTANTS.SERVER_BASE_URL}/auth/otp/${token}/verify`,
         data: otp
     });
 }
@@ -50,7 +50,7 @@ const verifyOTP = (otp, token) => {
 const verifyAccount = (otp, token) => {
     return axios({
         method: 'PUT',
-        url: `${CONSTANTS.SERVER_BASE_URL}/user/auth/profile/${token}`,
+        url: `${CONSTANTS.SERVER_BASE_URL}/auth/profile/${token}`,
         data: otp
     });
 }
@@ -58,7 +58,7 @@ const verifyAccount = (otp, token) => {
 const resendOTP = (user) => {
     return axios({
         method: 'POST',
-        url: `${CONSTANTS.SERVER_BASE_URL}/user/auth/otp/resend`,
+        url: `${CONSTANTS.SERVER_BASE_URL}/auth/otp/resend`,
         data: user
     });
 }
